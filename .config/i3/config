@@ -175,7 +175,7 @@ assign [class="Thunderbird"] $ws10
 #==============================================================================
 # start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# wallpaper
+# set wallpaper
 exec_always --no-startup-id feh --bg-scale $HOME/Imagens/minimal/debianblack.png
 
 # composite manager
