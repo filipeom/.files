@@ -10,6 +10,13 @@ font pango:DejaVu Sans Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# gaps
+gaps inner 5
+# Border style
+default_border pixel 1
+# Hide borders
+hide_edge_borders smart
+
 #==============================================================================
 #                                 i3 keybindings
 #==============================================================================
@@ -168,6 +175,8 @@ assign [class="Thunderbird"] $ws10
 #==============================================================================
 # start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# wallpaper
+exec_always --no-startup-id feh --bg-scale $HOME/Imagens/minimal/debianblack.png
 
 # composite manager
 # exec --nostartup-id compton -f
