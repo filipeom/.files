@@ -13,6 +13,7 @@ set cinoptions+=j1
 " Themes and Colors
 colorscheme ron
 set number
+set modeline
 
 "==============================================================================
 "                                 Key Mappings

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Bar to launch
+BAR=simple
+
 # Terminate already running bar instances
 killall -q polybar
 
@@ -9,8 +12,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch polybar
 if type "xrandr"; then
     for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload simple &
+        MONITOR=$m polybar --reload $BAR &
     done
 else
-    polybar --reload simple &
+    polybar --reload $BAR &
 fi
