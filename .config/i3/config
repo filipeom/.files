@@ -21,7 +21,7 @@ hide_edge_borders smart
 #                                 i3 keybindings
 #==============================================================================
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -36,7 +36,7 @@ bindsym $mod+d exec --no-startup-id rofi -combi-modi window#drun#ssh -font "Term
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+ccedilla focus right
+bindsym $mod+c focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -171,7 +171,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 #                               client bindings
 #==============================================================================
 # mail client
-assign [class="Thunderbird"] $ws10
+assign [class="thunderbird"] $ws10
 
 #==============================================================================
 #                                i3 autostart
