@@ -11,7 +11,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # gaps
-gaps inner 2
+gaps inner 10
 # Border style
 default_border pixel 1
 # Hide borders
