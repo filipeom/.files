@@ -8,4 +8,5 @@ alias \
 
 # Dotfiles
 alias \
+  edit="$EDITOR" \
   dotfiles="/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"

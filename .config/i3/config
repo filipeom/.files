@@ -13,7 +13,7 @@ floating_modifier $mod
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
 # Inner gaps
-gaps inner 10
+gaps inner 7
 
 # Border style
 default_border pixel 1
