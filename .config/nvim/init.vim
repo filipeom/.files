@@ -23,6 +23,8 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
+Plug 'lervag/vimtex'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "===============================================================================
@@ -124,7 +126,11 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 "===============================================================================
 "== Plugin configuration
 "===============================================================================
-" Nerd tree
+
+
+"==========================================================
+"=> Nerd Tree
+"==========================================================
 let g:NERDTreeWinPos="right"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore=['\.pyc$', '__pycache__']
@@ -134,12 +140,17 @@ nmap <leader>nn :NERDTreeToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+"==========================================================
+"=> Powerline vim
+"==========================================================
 " Powerline vim
 let g:powerline_pycmd="py3"
 set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
 
-" Airline Vim
-let g:airline_theme="deus"
+"==========================================================
+"=> Airline vim
+"==========================================================
+let g:airline_theme="angr"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -169,3 +180,16 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+"==========================================================
+"=> Vimtex
+"==========================================================
+nmap <leader>l :VimtexCompile<CR>
+
+"==========================================================
+"=> Goyo
+"==========================================================
+let g:goyo_width=100
+let g:goyo_margin_top=7
+let g:goyo_margin_bottom=7
+nnoremap <silent> <leader>z :Goyo<CR>
