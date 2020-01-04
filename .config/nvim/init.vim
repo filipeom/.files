@@ -185,12 +185,22 @@ let g:airline_symbols.linenr = ''
 "=> Vimtex
 "==========================================================
 let g:vimtex_view_general_viewer = 'evince'
+let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 nmap <leader>l :VimtexCompile<CR>
 
 "==========================================================
 "=> Goyo
 "==========================================================
 let g:goyo_width=100
-let g:goyo_margin_top=7
-let g:goyo_margin_bottom=7
+let g:goyo_margin_top=5
+let g:goyo_margin_bottom=5
 nnoremap <silent> <leader>z :Goyo<CR>
