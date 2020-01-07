@@ -17,6 +17,42 @@ plugins=(git encode64 extract)
 source $ZSH/oh-my-zsh.sh
 
 #===============================================================================
+#                          ZSH USER COMMAND SHORTCUTS
+#===============================================================================
+
+emount() {
+  local DEV="$1"
+  local MOUNT_DEV="ciphered_dev"
+
+  if [ -z $DEV ] || [ ! -e $DEV ]; then
+    printf "Error: Bad Device Argument.\n"
+    return -1
+  fi
+
+  sudo cryptsetup luksOpen $DEV $MOUNT_DEV
+
+  sudo mkdir -p "/media/filipe/$MOUNT_DEV"
+  sudo mount "/dev/mapper/$MOUNT_DEV" "/media/filipe/$MOUNT_DEV"
+
+  printf "Mounted in '/media/filipe/$MOUNT_DEV'\n"
+  printf "Run: eumount $MOUNT_DEV. To unmount and close encrypted drive.\n"
+}
+
+eumount() {
+  local DEV="$1"
+
+  if [ -z $DEV ]; then
+    printf "Error: Bad Device Argument.\n"
+    return -1
+  fi
+
+  sudo umount "/media/filipe/$DEV"
+  sudo cryptsetup luksClose $DEV
+
+  sudo rmdir "/media/filipe/$DEV/"
+}
+
+#===============================================================================
 #                          ZSH USER CONFIGURATION
 #===============================================================================
 # Include hidden files in autocomplete
