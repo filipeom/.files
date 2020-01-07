@@ -30,15 +30,14 @@ function emount() {
   fi
 
   sudo cryptsetup luksOpen $DEV $MOUNT_DEV
-  if [ $? -ne 0 ]; then
-    return -1
-  fi
+  [ $? -ne 0 ] && return -1
 
   sudo mkdir -p "/media/filipe/$MOUNT_DEV"
-  sudo mount "/dev/mapper/$MOUNT_DEV" "/media/filipe/$MOUNT_DEV"
+  sudo mount -o rw,nosuid,nodev,relatime "/dev/mapper/$MOUNT_DEV" "/media/filipe/$MOUNT_DEV"
 
-  printf "Mounted in '/media/filipe/$MOUNT_DEV'\n"
-  printf "Run: eumount $MOUNT_DEV. To unmount and close encrypted drive.\n"
+  printf "Successfully mounted in: '/media/filipe/$MOUNT_DEV'\n"
+  printf "Safely remove drive with: eumount $MOUNT_DEV\n"
+  printf "Goto mounted dir with: cd /media/filipe/$MOUNT_DEV\n"
 }
 
 function eumount() {
@@ -62,9 +61,6 @@ function eumount() {
 _comp_options+=(globdots)
 
 # Add aliases
-if [ -f "${HOME}/.config/aliasrc" ]
-then
-  source "${HOME}/.config/aliasrc"
-fi
+[ -f "${HOME}/.config/aliasrc" ] && source "${HOME}/.config/aliasrc"
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
