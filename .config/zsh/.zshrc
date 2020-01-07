@@ -20,16 +20,19 @@ source $ZSH/oh-my-zsh.sh
 #                          ZSH USER COMMAND SHORTCUTS
 #===============================================================================
 
-emount() {
+function emount() {
   local DEV="$1"
   local MOUNT_DEV="ciphered_dev"
 
   if [ -z $DEV ] || [ ! -e $DEV ]; then
-    printf "Error: Bad Device Argument.\n"
+    printf "ERROR: Bad Device Argument.\n"
     return -1
   fi
 
   sudo cryptsetup luksOpen $DEV $MOUNT_DEV
+  if [ $? -ne 0 ]; then
+    return -1
+  fi
 
   sudo mkdir -p "/media/filipe/$MOUNT_DEV"
   sudo mount "/dev/mapper/$MOUNT_DEV" "/media/filipe/$MOUNT_DEV"
@@ -38,11 +41,11 @@ emount() {
   printf "Run: eumount $MOUNT_DEV. To unmount and close encrypted drive.\n"
 }
 
-eumount() {
+function eumount() {
   local DEV="$1"
 
-  if [ -z $DEV ]; then
-    printf "Error: Bad Device Argument.\n"
+  if [ -z $DEV ] || [ ! -e "/media/filipe/$DEV" ]; then
+    printf "ERROR: Bad Device Argument.\n"
     return -1
   fi
 
