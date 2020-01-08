@@ -16,7 +16,7 @@ echo ".dotfiles" >> .gitignore
 * Now clone your dotfiles into a bare repository in a `.` directory of your `$HOME`
 
 ```
-git clone --bare https://github.com/filipeom/.dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/filipeom/.files.git $HOME/.dotfiles
 ```
 
 * Define the `alias` in the current shell scope:
