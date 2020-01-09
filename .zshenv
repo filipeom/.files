@@ -1,3 +1,5 @@
+export DATA="/media/hdd"
+
 export ZSH="${HOME}/.oh-my-zsh"
 
 export EDITOR="nvim"
