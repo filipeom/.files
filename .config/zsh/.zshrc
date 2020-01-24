@@ -3,7 +3,8 @@
 #===============================================================================
 
 # OH-MY-ZSH Theme 
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Case sensitive tab completion
 CASE_SENSITIVE="true"
@@ -63,4 +64,5 @@ _comp_options+=(globdots)
 # Add aliases
 [ -f "${HOME}/.config/aliasrc" ] && source "${HOME}/.config/aliasrc"
 
+# Syntax highlighting like vim
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
