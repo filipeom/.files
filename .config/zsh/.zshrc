@@ -3,8 +3,8 @@
 #===============================================================================
 
 # OH-MY-ZSH Theme 
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
 
 # Case sensitive tab completion
 CASE_SENSITIVE="true"

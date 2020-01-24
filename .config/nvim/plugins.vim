@@ -42,7 +42,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "==========================================================
 " Powerline vim
 let g:powerline_pycmd="py3"
-set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
+" FIXME: Add runtime path
 
 "==========================================================
 "=> Airline vim
