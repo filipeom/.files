@@ -14,6 +14,4 @@ export ZSH="${HOME}/.oh-my-zsh"
 export ZDOTDIR="${HOME}/.config/zsh"
 
 # HDD configurations
-export DATA="/media/hdd"
-export DATA_HOME="$DATA/home/filipe"
-export VAGRANT_HOME="$DATA_HOME/.vagrant.d"
+export VAGRANT_HOME="/data/home/filipe/.vagrant.d"

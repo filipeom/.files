@@ -5,7 +5,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Source Code Pro 10px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -13,7 +13,7 @@ floating_modifier $mod
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
 # Inner gaps
-gaps inner 5
+gaps inner 10
 
 # Border style
 default_border pixel 1
@@ -24,13 +24,13 @@ hide_edge_borders smart
 #                                 i3 keybindings
 #==============================================================================
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+Shift+x exec --no-startup-id dm-tool switch-to-greeter
+bindsym $mod+Shift+x exec --no-startup-id dm-tool lock
 
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show combi
@@ -173,7 +173,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 #                               client bindings
 #==============================================================================
 # mail client
-assign [class="thunderbird"] $ws10
+assign [class="Thunderbird"] $ws10
 
 #==============================================================================
 #                                i3 autostart
@@ -184,6 +184,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.png
 
 # composite manager
-exec --no-startup-id compton -f
+exec --no-startup-id picom -bf
 # mail client
 exec --no-startup-id thunderbird

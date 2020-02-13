@@ -1,0 +1,75 @@
+!========================================
+!=> Font
+!========================================
+URxvt.font: xft:Source Code Pro for Powerline-10,xft:DejaVu Sans Mono for Powerline-12
+!URxvt.boldFont: xft:Source Code Pro:style=Bold:size=10
+!URxvt.italicFont: xft:Source Code Pro:style=Italic:size=10
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+
+!========================================
+!=> Window
+!========================================
+URxvt.geometry: 80x24
+URxvt.internalBorder: 5
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 32
+URxvt.scrollTtyOutput: true
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+!========================================
+!=> Colorscheme
+!========================================
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+!========================================
+!=> Colorscheme
+!========================================
+! special
+URxvt.foreground: #aaaaaa
+URxvt.background:[85]#111111
+URxvt.cursorColor: #aaaaaa
+
+! black
+URxvt.color0: #000000
+URxvt.color8: #555555
+
+! red
+URxvt.color1: #AA0000
+URxvt.color9: #ff5555
+
+! green
+URxvt.color2: #00aa00
+URxvt.color10: #55ff55 
+
+! yellow
+URxvt.color3: #aa5500
+URxvt.color11: #ffff55
+
+! blue
+URxvt.color4: #0000aa
+URxvt.color12: #5555ff
+
+! magenta
+URxvt.color5: #aa00aa
+URxvt.color13: #ff55ff
+
+! cyan
+URxvt.color6: #00aaaa
+URxvt.color14: #55ffff
+
+! white
+URxvt.color7: #aaaaaa
+URxvt.color15: #ffffff
+
+! vi: ft=xdefaults
