@@ -1,7 +1,7 @@
 !========================================
 !=> Font
 !========================================
-URxvt.font: xft:Source Code Pro for Powerline-10,xft:DejaVu Sans Mono for Powerline-12
+URxvt.font: xft:Source Code Pro:size=10,xft:DejaVu Sans Mono for Powerline:size=12
 !URxvt.boldFont: xft:Source Code Pro:style=Bold:size=10
 !URxvt.italicFont: xft:Source Code Pro:style=Italic:size=10
 URxvt.letterSpace: 0
