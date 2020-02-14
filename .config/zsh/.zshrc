@@ -12,7 +12,7 @@ CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Plugins
-plugins=(git encode64 extract)
+plugins=(git encode64 extract archlinux)
 
 source $ZSH/oh-my-zsh.sh
 

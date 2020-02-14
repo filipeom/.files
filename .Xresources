@@ -1,2 +1,1 @@
-! Include urxvt config
 #include ".config/urxvt/config"

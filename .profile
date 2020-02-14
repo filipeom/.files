@@ -1,7 +1,8 @@
-# Adds ~/.local/bin to you PATH
+# System Variables
 export PATH="$PATH:$HOME/.local/bin"
+export VAGRANT_HOME="/data/home/filipe/.vagrant.d"
+export XDG_CONFIG_HOME="${HOME}/.config"
 
-# Default System User
 export DEFAULT_USER="filipe"
 
 # Default apps
@@ -12,6 +13,3 @@ export FILE="ranger"
 # ZSH
 export ZSH="${HOME}/.oh-my-zsh"
 export ZDOTDIR="${HOME}/.config/zsh"
-
-# HDD configurations
-export VAGRANT_HOME="/data/home/filipe/.vagrant.d"
