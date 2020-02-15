@@ -3,8 +3,6 @@
 #==============================================================================
 set $mod Mod1
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Terminus 10px
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -19,6 +17,18 @@ gaps inner 10
 default_border pixel 1
 # Hide borders
 hide_edge_borders smart
+
+#==============================================================================
+#                                   Colors
+#==============================================================================
+# Class                   border      backgroud   text        indicator   child_border
+client.focused            #444444     #222222     #dfdfdf     #ffb52a     #0a6cf5
+client.focused_inactive   #444444     #222222     #dfdfdf     #ffb52a     #444444
+client.unfocused          #222222     #111111     #888888     #ffb52a     #000000
+client.urgent             #ff5555     #bd2c40     #dfdfdf     #ffb52a     #ff5555
+client.placeholder        #000000     #0c0c0c     #ffffff     #000000     #0c0c0c
+
+client.background         #ffffff
 
 #==============================================================================
 #                                 i3 keybindings
@@ -48,10 +58,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ccedilla move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left

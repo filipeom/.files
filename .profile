@@ -7,7 +7,7 @@ export DEFAULT_USER="filipe"
 
 # Default apps
 export EDITOR="nvim"
-export TERMINAL="xfce4-terminal"
+export TERMINAL="rxvt-unicode-256color"
 export FILE="ranger"
 
 # ZSH

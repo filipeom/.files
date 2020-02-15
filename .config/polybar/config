@@ -1,8 +1,8 @@
 ; vim: ft=dosini
 
 [colors]
-background = #222
-background-alt = #444
+background = #e0111111
+background-alt = #e0222222
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
@@ -33,7 +33,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3 mpd
 modules-center = xwindow
-modules-right = pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = alsa filesystem memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -64,7 +64,7 @@ label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 60
 
 mount-0 = /
 

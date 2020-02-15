@@ -1,11 +1,9 @@
 !========================================
 !=> Font
 !========================================
-URxvt.font: xft:Source Code Pro:size=10,xft:DejaVu Sans Mono for Powerline:size=12
-!URxvt.boldFont: xft:Source Code Pro:style=Bold:size=10
-!URxvt.italicFont: xft:Source Code Pro:style=Italic:size=10
+URxvt.font: xft:xos4 Terminess Powerline:size=12,xft:DejaVu Sans Mono for Powerline:size=12
 URxvt.letterSpace: 0
-URxvt.lineSpace: 0
+URxvt.lineSpace: 1
 
 !========================================
 !=> Window
@@ -36,9 +34,9 @@ URxvt.matcher.button: 1
 !=> Colorscheme
 !========================================
 ! special
-URxvt.foreground: #aaaaaa
-URxvt.background:[93]#111111
-URxvt.cursorColor: #aaaaaa
+URxvt.foreground: #b2b2b2
+URxvt.background:[90]#111111
+URxvt.cursorColor: #dfdfdf
 
 ! black
 URxvt.color0: #000000
