@@ -1,7 +1,6 @@
-"===============================================================================
-"== Plugin configuration
-"===============================================================================
-
+"========================================
+"=> Plugin configuration
+"========================================
 " Install plugin manager
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
   silent !mkdir -p ~/.config/nvim/autoload/
@@ -23,11 +22,12 @@ Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
-"==========================================================
+"========================================
 "=> Nerd Tree
-"==========================================================
+"========================================
 let g:NERDTreeWinPos="right"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore=['\.pyc$', '__pycache__']
@@ -37,16 +37,16 @@ nmap <leader>nn :NERDTreeToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"==========================================================
+"========================================
 "=> Powerline vim
-"==========================================================
+"========================================
 " Powerline vim
 let g:powerline_pycmd="py3"
 " FIXME: Add runtime path
 
-"==========================================================
+"========================================
 "=> Airline vim
-"==========================================================
+"========================================
 let g:airline_theme="angr"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
@@ -78,9 +78,9 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-"==========================================================
+"========================================
 "=> Vimtex
-"==========================================================
+"========================================
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_compiler_latexmk = {
@@ -94,9 +94,9 @@ let g:vimtex_compiler_latexmk = {
     \}
 nmap <leader>l :VimtexCompile<CR>
 
-"==========================================================
+"========================================
 "=> Goyo
-"==========================================================
+"========================================
 let g:goyo_width=100
 let g:goyo_margin_top=5
 let g:goyo_margin_bottom=5

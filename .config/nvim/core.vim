@@ -1,6 +1,9 @@
-"===============================================================================
-"== Settings
-"===============================================================================
+"========================================
+"=> General
+"========================================
+" Sets how many lines of history VIM has to remember
+set history=500
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -19,18 +22,40 @@ nmap <leader>q :wq!<CR>
 " Cursor Shape
 set guicursor=
 
-"===============================================================================
-"== Colors and Fonts
-"===============================================================================
+"========================================
+"=> User Interface
+"========================================
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Incremental search
+set incsearch
+
+" Add a bit extra margin to the left
+set foldcolumn=0
+
+"========================================
+"=> Colors and Fonts
+"========================================
+" Enable syntax highlighting
 syntax enable
 
 set background=dark
 
 set encoding=utf-8
 
-"===============================================================================
-"== Text, tab and indent related
-"===============================================================================
+"========================================
+"=> Text, tab and indent related
+"========================================
 " Use spaces instead of tabs
 set expandtab
 set smarttab
@@ -46,19 +71,18 @@ set si
 " Wrap lines
 set wrap
 
-"===============================================================================
-"== Misc
-"===============================================================================
-
+"========================================
+"=> Misc
+"========================================
 " Fast editing and reloading of vimrc
-map <leader>e :e! ~/.config/nvim/init.vim<CR>
-autocmd! bufwritepost ~/.config/nvim/init.vim source ~/.config/nvim/init.vim
+map <leader>e :e! ~/.config/nvim/my_configs.vim<CR>
+autocmd! bufwritepost ~/.config/nvim/my_configs.vim source ~/.config/nvim/init.vim
 
 set modeline
 
 set number relativenumber
 
-" Enable autocompletion:
+" Enable auto completion:
 set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
@@ -67,9 +91,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Splits open at the bottom and right
 set splitbelow splitright
 
-"===============================================================================
-"== Bindings
-"===============================================================================
+"========================================
+"=> Bindings
+"========================================
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <C-space> ?
@@ -77,7 +101,7 @@ map <C-space> ?
 " Disable highlight
 map <silent> <leader><CR> :noh<CR>
 
-" Shortcutting split naviagtion
+" Shortcutting split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k

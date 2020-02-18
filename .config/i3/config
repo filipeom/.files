@@ -1,6 +1,6 @@
-#==============================================================================
-#                            i3 general configuration
-#==============================================================================
+#========================================
+#=> i3 General Configurations
+#========================================
 set $mod Mod1
 
 font pango:Terminus 10px
@@ -18,9 +18,9 @@ default_border pixel 1
 # Hide borders
 hide_edge_borders smart
 
-#==============================================================================
-#                                   Colors
-#==============================================================================
+#========================================
+#=> Class Colors
+#========================================
 # Class                   border      backgroud   text        indicator   child_border
 client.focused            #444444     #222222     #dfdfdf     #ffb52a     #0a6cf5
 client.focused_inactive   #444444     #222222     #dfdfdf     #ffb52a     #444444
@@ -30,9 +30,9 @@ client.placeholder        #000000     #0c0c0c     #ffffff     #000000     #0c0c0
 
 client.background         #ffffff
 
-#==============================================================================
-#                                 i3 keybindings
-#==============================================================================
+#========================================
+#=> i3 keybindings
+#========================================
 # start a terminal
 bindsym $mod+Return exec urxvt
 
@@ -179,15 +179,15 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 # decrease screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
-#==============================================================================
-#                               client bindings
-#==============================================================================
+#========================================
+#=> Client Bindings
+#========================================
 # mail client
 assign [class="Thunderbird"] $ws10
 
-#==============================================================================
-#                                i3 autostart
-#==============================================================================
+#========================================
+#=> i3 Autostart
+#========================================
 # start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # set wallpaper
@@ -197,3 +197,5 @@ exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.jpg
 exec --no-startup-id picom -bf
 # mail client
 exec --no-startup-id thunderbird
+# network manager applet
+exec --no-startup-id nm-applet

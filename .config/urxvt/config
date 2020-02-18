@@ -1,7 +1,7 @@
 !========================================
 !=> Font
 !========================================
-URxvt.font: xft:xos4 Terminess Powerline:size=12,xft:DejaVu Sans Mono for Powerline:size=12
+URxvt.font: xft:xos4 Terminess Powerline:size=10,xft:DejaVu Sans Mono for Powerline:size=12
 URxvt.letterSpace: 0
 URxvt.lineSpace: 1
 
@@ -34,9 +34,9 @@ URxvt.matcher.button: 1
 !=> Colorscheme
 !========================================
 ! special
-URxvt.foreground: #b2b2b2
-URxvt.background:[90]#111111
-URxvt.cursorColor: #dfdfdf
+URxvt.foreground: #B2B2B2
+URxvt.background: [90]#111111
+URxvt.cursorColor: #DFDFDF
 
 ! black
 URxvt.color0: #000000
@@ -44,30 +44,30 @@ URxvt.color8: #555555
 
 ! red
 URxvt.color1: #AA0000
-URxvt.color9: #ff5555
+URxvt.color9: #FF5555
 
 ! green
-URxvt.color2: #00aa00
-URxvt.color10: #55ff55 
+URxvt.color2: #00AA00
+URxvt.color10: #55FF55 
 
 ! yellow
-URxvt.color3: #aa5500
-URxvt.color11: #ffff55
+URxvt.color3: #AA5500
+URxvt.color11: #FFFF55
 
 ! blue
-URxvt.color4: #0000aa
-URxvt.color12: #5555ff
+URxvt.color4: #0000AA
+URxvt.color12: #5555FF
 
 ! magenta
-URxvt.color5: #aa00aa
-URxvt.color13: #ff55ff
+URxvt.color5: #AA00AA
+URxvt.color13: #FF55FF
 
 ! cyan
-URxvt.color6: #00aaaa
-URxvt.color14: #55ffff
+URxvt.color6: #00AAAA
+URxvt.color14: #55FFFF
 
 ! white
-URxvt.color7: #aaaaaa
-URxvt.color15: #ffffff
+URxvt.color7: #AAAAAA
+URxvt.color15: #FFFFFF
 
 ! vi: ft=xdefaults
