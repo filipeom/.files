@@ -180,12 +180,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 # mail client
 assign [class="Thunderbird"] $ws10
 
+for_window [class="(?i)gscreenshot"] floating enable
+
 #========================================
 #=> i3 Autostart
 #========================================
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.jpg
-
-exec --no-startup-id picom -bf
-exec --no-startup-id thunderbird
-exec --no-startup-id nm-applet

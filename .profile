@@ -7,7 +7,7 @@ export DEFAULT_USER="filipe"
 
 # Default apps
 export EDITOR="nvim"
-export TERMINAL="rxvt-unicode-256color"
+export TERMINAL="st"
 export FILE="ranger"
 
 # ZSH

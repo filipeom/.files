@@ -15,11 +15,13 @@ width = 100%
 height = 22
 fixed-center = true
 
+wm-restack = bspwm
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 1
-line-color = #f00
+line-color = #222222
 
 padding-left = 0
 padding-right = 1
@@ -27,12 +29,12 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
 
-font-0 = xos4 Terminess Powerline:size=10;1
+font-0 = xos4 Terminess Powerline:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = i3 mpd
-modules-center = xwindow
+modules-left = i3 bspwm mpd
+modules-center = xwindow 
 modules-right = alsa filesystem memory cpu battery temperature date powermenu
 
 tray-position = right
@@ -74,6 +76,8 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
+
+pin-workspaces = true
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
@@ -134,7 +138,7 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online =  <icon-prev> <icon-stop> <toggle> <icon-next> <bar-progress> <label-time> <label-song>
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <label-song>
 
 icon-prev = 
 icon-stop = 
