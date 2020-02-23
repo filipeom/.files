@@ -38,15 +38,23 @@ alt + {t,s,@space}
 
 # Focues the node in the given direction
 alt + {_,shift +}{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+	bspc node -{f,s} {west,south,north,east} --follow
 
 # Focus the next/previous node in the current desktop
 alt + {n,p}
 	bspc node -f {next,prev}.local
 
+# Focus next monitor
+alt + shift + {n,p}
+	bspc monitor -f {next,prev}
+
 # Focus or send to the given desktop
 alt + {_,shift +}{1-9,0}
-	bspc {desktop -f, node -d} '^{1-9,10}'
+	bspc {desktop -f, node -d} focused:'^{1-9,10}'
+
+# Send to the given monitor
+alt + m ; {1-9,0}
+  bspc node -d next:'^{1-9,10}' --follow
 
 # Preselect the direction
 alt + ctrl + {h,j,k,l}
@@ -57,8 +65,8 @@ alt + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # Cancel the preselection for the focused desktop
-alt + ctrl + Escape
-	bspc query -N -d | xargs -I id -n 4 bspc node id -p cancel
+alt + ctrl + space
+	bspc node -p cancel
 
 # Expand a window by moving one of its side outward
 alt + {Left,Down,Up,Right}
@@ -69,8 +77,8 @@ alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # Move a floating window
-alt + ctrl + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+ctrl + {Left,Down,Up,Right}
+	bspc node -v {-40 0,0 40,0 -40,40 0}
 
 #========================================
 #=> Misc

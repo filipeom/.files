@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
-
-# Bar to launch
-BAR=simple
+#!/usr/bin/env sh
 
 # Terminate already running bar instances
 killall -q polybar
@@ -13,10 +10,6 @@ export BATTERY="BAT$(cat /sys/class/power_supply/AC/online)"
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-if type "xrandr"; then
-    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload $BAR &
-    done
-else
-    polybar --reload $BAR &
-fi
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+  MONITOR=$m polybar --reload simple &
+done

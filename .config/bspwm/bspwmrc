@@ -1,51 +1,48 @@
 #! /bin/sh
 
-auto_start() {
-  # Terminate all instances of sxhkd 
-  killall -q sxhkd
+#========================================
+#=> Autostart
+#========================================
+# Restart sxhkd
+killall -q sxhkd
+while pgrep -u $UID -x sxhkd >/dev/null; do sleep 1; done
+sxhkd &
 
-  # Await termination
-  while pgrep -u $UID -x sxhkd >/dev/null; do sleep 1; done
+# Spawn bspwm in all monitors
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+  [ $m = DP2 ] && xrandr --output DP2 --pos 1600x0 --auto
+  bspc monitor $m -d 1 2 3 4 5 6 7 8 9 10
+done
 
-  # Start sxhkd
-  sxhkd &
+# Launch polybar
+sh $HOME/.config/polybar/launch.sh
 
-  # Start bspwm in all monitors
-  if type "xrandr"; then
-    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-      bspc monitor $m -d 1 2 3 4 5 6 7 8 9 10 
-    done
-  else
-    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
-  fi
-}
+# Set wallpaper
+feh --bg-scale $HOME/.config/wallpaper.jpg
 
-config_bspwm() {
-  bspc config border_width         1
-  bspc config window_gap           10
-  bspc config top_padding          22
+#========================================
+#=> Bspwm configuration
+#========================================
+bspc config border_width            1
+bspc config window_gap              10
+bspc config top_padding             22
 
-  bspc config split_ratio          0.50
-  bspc config borderless_monocle   true
-  bspc config gapless_monocle      false
+bspc config split_ratio             0.50
+bspc config borderless_monocle      true
+bspc config gapless_monocle         false
+bspc config pointer_follows_focus   true
+bspc config pointer_follows_monitor true
 
-  bspc config normal_border_color  "#444444"
-  bspc config active_border_color  "#444444"
-  bspc config focused_border_color "#0a6cf5"
-  bspc config urgent_border_color  "#ff5555"
-}
+bspc config normal_border_color     "#444444"
+bspc config active_border_color     "#444444"
+bspc config focused_border_color    "#0a6cf5"
+bspc config urgent_border_color     "#ff5555"
 
-add_rules() {
-  bspc rule -r "*"
-  bspc rule -a Thunderbird desktop='^10'
-  bspc rule -a Gscreenshot state=floating
-  bspc rule -a Zathura state=tiled
-}
-
-main() {
-  auto_start
-  config_bspwm
-  add_rules
-}
-
-main
+#========================================
+#=> Window rules
+#========================================
+bspc rule -r "*"
+bspc rule -a Thunderbird desktop='focused:^10'
+bspc rule -a Gscreenshot state=floating
+bspc rule -a Zathura state=tiled
+bspc rule -a Nm-connection-editor state=floating
