@@ -50,11 +50,11 @@ alt + shift + {n,p}
 
 # Focus or send to the given desktop
 alt + {_,shift +}{1-9,0}
-	bspc {desktop -f, node -d} focused:'^{1-9,10}'
+	bspc {desktop -f,node -d} focused:'^{1-9,10}'
 
-# Send to the given monitor
-alt + m ; {1-9,0}
-  bspc node -d next:'^{1-9,10}' --follow
+# Focus or send to the given desktop in the next monitor
+alt + m ; {_,shift +}{1-9,0}
+  bspc {desktop -f,node -d} next:'^{1-9,10}' --follow
 
 # Preselect the direction
 alt + ctrl + {h,j,k,l}
