@@ -43,14 +43,22 @@ set incsearch
 " Add a bit extra margin to the left
 set foldcolumn=0
 
+" Set lines around cursor when scrolling
+set scrolloff=10
+
 "========================================
 "=> Colors and Fonts
 "========================================
 " Enable syntax highlighting
 syntax enable
 
+" Set dark background
 set background=dark
 
+" Set colorscheme
+colorscheme default
+
+" Set utf-8 character encodings
 set encoding=utf-8
 
 "========================================
@@ -75,8 +83,15 @@ set wrap
 "=> Misc
 "========================================
 " Fast editing and reloading of vimrc
-map <leader>e :e! ~/.config/nvim/my_configs.vim<CR>
-autocmd! bufwritepost ~/.config/nvim/my_configs.vim source ~/.config/nvim/init.vim
+map <leader>ee :e! ~/.config/nvim/init.vim<CR>
+map <leader>ec :e! ~/.config/nvim/core.vim<CR>
+map <leader>ep :e! ~/.config/nvim/plugins.vim<CR>
+augroup auto_reload
+  autocmd!
+  autocmd BufWritePost ~/.config/nvim/init.vim source ~/.config/nvim/init.vim
+  autocmd BufWritePost ~/.config/nvim/core.vim source ~/.config/nvim/core.vim
+  autocmd BufWritePost ~/.config/nvim/plugins.vim source ~/.config/nvim/plugins.vim
+augroup END
 
 set modeline
 

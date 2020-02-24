@@ -35,7 +35,7 @@ let g:NERDTreeWinSize=35
 
 nmap <leader>nn :NERDTreeToggle<CR>
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "========================================
 "=> Powerline vim
