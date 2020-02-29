@@ -2,6 +2,8 @@
 
 # Start compositor
 picom -bf
+# Set wallpaper
+xwallpaper --daemon --zoom $HOME/.config/wallpaper.jpg
 
 # Start email client
 thunderbird &

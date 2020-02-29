@@ -17,9 +17,6 @@ done
 # Launch polybar
 sh $HOME/.config/polybar/launch.sh
 
-# Set wallpaper
-feh --bg-scale $HOME/.config/wallpaper.jpg
-
 #========================================
 #=> Bspwm configuration
 #========================================

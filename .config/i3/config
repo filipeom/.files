@@ -186,4 +186,3 @@ for_window [class="(?i)gscreenshot"] floating enable
 #=> i3 Autostart
 #========================================
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpaper.jpg
