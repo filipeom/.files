@@ -126,7 +126,7 @@ map <C-l> <C-w>l
 map <leader>tn : tabnew<CR>
 map <leader>to : tabonly<CR>
 map <leader>tc : tabclose<CR>
-map <leader>t<leader> :tabnext
+map <leader>t<leader> :tabnext<CR>
 
 " Let 'tl' toggle between this and the last access tab
 let g:lasttab=1

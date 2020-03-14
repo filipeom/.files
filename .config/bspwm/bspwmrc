@@ -20,7 +20,7 @@ sh $HOME/.config/polybar/launch.sh
 #========================================
 #=> Bspwm configuration
 #========================================
-bspc config border_width            1
+bspc config border_width            2
 bspc config window_gap              10
 bspc config top_padding             22
 
@@ -30,10 +30,9 @@ bspc config gapless_monocle         false
 bspc config pointer_follows_focus   true
 bspc config pointer_follows_monitor true
 
-bspc config normal_border_color     "#444444"
-bspc config active_border_color     "#444444"
+bspc config normal_border_color     "#212121"
+bspc config active_border_color     "#666666"
 bspc config focused_border_color    "#0a6cf5"
-bspc config urgent_border_color     "#ff5555"
 
 #========================================
 #=> Window rules
