@@ -134,4 +134,13 @@ nmap <leader>tl :exe "tabn ".g:lasttab<CR>
 autocmd TabLeave * let g:lasttab=tabpagenr()
 
 " Return to last edit position when opening files
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g'\"" | endif 
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g'\"" | endif
+
+"========================================
+"=> Persistent undo on
+"========================================
+try
+  set undodir=~/.config/nvim/undo
+  set undofile
+catch
+endtry
