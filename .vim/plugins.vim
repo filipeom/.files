@@ -20,6 +20,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'flazz/vim-colorschemes'
+Plug 'whonore/Coqtail' | Plug 'let-def/vimbufsync'
 call plug#end()
 
 "========================================
