@@ -6,7 +6,7 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export DEFAULT_USER="filipe"
 
 # Default apps
-export EDITOR="nvim"
+export EDITOR="vim"
 export TERMINAL="st"
 export FILE="ranger"
 

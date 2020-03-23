@@ -55,7 +55,7 @@ syntax enable
 set background=dark
 
 " Set colorscheme
-colorscheme default
+colorscheme ron
 
 " Set utf-8 character encodings
 set encoding=utf-8

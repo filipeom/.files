@@ -2,13 +2,13 @@
 "=> Plugin configuration
 "========================================
 " Install plugin manager
-if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-  silent !mkdir -p ~/.config/nvim/autoload/
-  silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
-  autocmd VimEnter * PlugInstall
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -20,14 +20,7 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'flazz/vim-colorschemes'
-Plug 'whonore/Coqtail' | Plug 'let-def/vimbufsync'
 call plug#end()
-
-"========================================
-"=> Python
-"========================================
-let g:python_host_prog="/bin/python2"
-let g:python3_host_prog="/bin/python3"
 
 "========================================
 "=> Nerd Tree
