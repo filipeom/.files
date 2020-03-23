@@ -82,14 +82,14 @@ set wrap
 "=> Misc
 "========================================
 " Fast editing and reloading of vimrc
-map <leader>ee :e! ~/.config/nvim/init.vim<CR>
-map <leader>ec :e! ~/.config/nvim/core.vim<CR>
-map <leader>ep :e! ~/.config/nvim/plugins.vim<CR>
+map <leader>ee :e! ~/.vimrc<CR>
+map <leader>ec :e! ~/.vim/core.vim<CR>
+map <leader>ep :e! ~/.vim/plugins.vim<CR>
 augroup auto_reload
   autocmd!
-  autocmd BufWritePost ~/.config/nvim/init.vim source ~/.config/nvim/init.vim
-  autocmd BufWritePost ~/.config/nvim/core.vim source ~/.config/nvim/core.vim
-  autocmd BufWritePost ~/.config/nvim/plugins.vim source ~/.config/nvim/plugins.vim
+  autocmd BufWritePost ~/.vimrc source ~/.vimrc
+  autocmd BufWritePost ~/.vim/core.vim source ~/.vim/core.vim
+  autocmd BufWritePost ~/.vim/plugins.vim source ~/.vim/plugins.vim
 augroup END
 
 set modeline
@@ -139,7 +139,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 "=> Persistent undo on
 "========================================
 try
-  set undodir=~/.config/nvim/undo
+  set undodir=~/.vim/undo
   set undofile
 catch
 endtry
