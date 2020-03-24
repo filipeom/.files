@@ -12,15 +12,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'jreybert/vimagit'
-Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'flazz/vim-colorschemes'
-Plug 'whonore/Coqtail' | Plug 'let-def/vimbufsync'
+Plug 'whonore/Coqtail'
+Plug 'let-def/vimbufsync'
 call plug#end()
 
 "========================================

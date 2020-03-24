@@ -1,13 +1,13 @@
 ; vim: ft=dosini
 
 [colors]
-background = #000000
-background-alt = #111111
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = #e6000000
+background-alt = #e6181818
+foreground = #e6dfdfdf
+foreground-alt = #e6555555
+primary = #e6ffb52a
+secondary = #e6e60053
+alert = #e6bd2c40
 
 [bar/simple]
 monitor = ${env:MONITOR}
