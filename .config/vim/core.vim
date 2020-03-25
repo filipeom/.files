@@ -82,14 +82,14 @@ set wrap
 "=> Misc
 "========================================
 " Fast editing and reloading of vimrc
-map <leader>ee :e! ~/.vimrc<CR>
-map <leader>ec :e! ~/.vim/core.vim<CR>
-map <leader>ep :e! ~/.vim/plugins.vim<CR>
+map <leader>ee :e! $XDG_CONFIG_HOME/vim/vimrc<CR>
+map <leader>ec :e! $XDG_CONFIG_HOME/vim/core.vim<CR>
+map <leader>ep :e! $XDG_CONFIG_HOME/vim/plugins.vim<CR>
 augroup auto_reload
   autocmd!
-  autocmd BufWritePost ~/.vimrc source ~/.vimrc
-  autocmd BufWritePost ~/.vim/core.vim source ~/.vim/core.vim
-  autocmd BufWritePost ~/.vim/plugins.vim source ~/.vim/plugins.vim
+  autocmd BufWritePost $XDG_CONFIG_HOME/vim/vimrc source $XDG_CONFIG_HOME/vim/vimrc
+  autocmd BufWritePost $XDG_CONFIG_HOME/vim/core.vim source $XDG_CONFIG_HOME/vim/vimrc
+  autocmd BufWritePost $XDG_CONFIG_HOME/vim/plugins.vim source $XDG_CONFIG_HOME/vim/vimrc
 augroup END
 
 set modeline
@@ -136,10 +136,11 @@ autocmd TabLeave * let g:lasttab=tabpagenr()
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g'\"" | endif
 
 "========================================
-"=> Persistent undo on
+"=> Directories
 "========================================
-try
-  set undodir=~/.vim/undo
-  set undofile
-catch
-endtry
+set undofile
+set undodir=$XDG_DATA_HOME/vim/undo
+set directory=$XDG_DATA_HOME/vim/swap
+set backupdir=$XDG_DATA_HOME/vim/backup
+set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after

@@ -1,8 +1,8 @@
 #=======================================
 #=> Directories
 #=======================================
-#ncmpcpp_directory = ~/.ncmpcpp
-#lyrics_directory = ~/.lyrics
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.local/share/ncmpcpp/lyrics
 
 #=======================================
 #=> Connection Settings

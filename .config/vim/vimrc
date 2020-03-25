@@ -1,0 +1,2 @@
+source $XDG_CONFIG_HOME/vim/core.vim
+source $XDG_CONFIG_HOME/vim/plugins.vim
