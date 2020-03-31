@@ -14,16 +14,15 @@ autocmd FocusGained,BufEnter * checktime
 " Leader
 let mapleader=","
 
-" Fast saving
-nmap <leader>w :w!<CR>
-nmap <leader>q :wq!<CR>
-
 " Cursor Shape
 set guicursor=
 
 "========================================
 "=> User Interface
 "========================================
+" Always show current position
+set ruler
+
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
@@ -39,6 +38,9 @@ set hlsearch
 " Incremental search
 set incsearch
 
+" Don't redraw while executing macros
+set lazyredraw
+
 " Add a bit extra margin to the left
 set foldcolumn=0
 
@@ -51,11 +53,16 @@ set scrolloff=10
 " Enable syntax highlighting
 syntax enable
 
-" Set dark background
-set background=dark
+" Enable 256 colors
+if !has('gui_running')
+  set t_Co=256
+endif
 
 " Set colorscheme
-colorscheme ron
+colorscheme desert
+
+" Set dark background
+set background=dark
 
 " Set utf-8 character encodings
 set encoding=utf-8
@@ -79,19 +86,14 @@ set si
 set wrap
 
 "========================================
+"=> Status line
+"========================================
+set laststatus=2
+set noshowmode
+
+"========================================
 "=> Misc
 "========================================
-" Fast editing and reloading of vimrc
-map <leader>ee :e! $XDG_CONFIG_HOME/vim/vimrc<CR>
-map <leader>ec :e! $XDG_CONFIG_HOME/vim/core.vim<CR>
-map <leader>ep :e! $XDG_CONFIG_HOME/vim/plugins.vim<CR>
-augroup auto_reload
-  autocmd!
-  autocmd BufWritePost $XDG_CONFIG_HOME/vim/vimrc source $XDG_CONFIG_HOME/vim/vimrc
-  autocmd BufWritePost $XDG_CONFIG_HOME/vim/core.vim source $XDG_CONFIG_HOME/vim/vimrc
-  autocmd BufWritePost $XDG_CONFIG_HOME/vim/plugins.vim source $XDG_CONFIG_HOME/vim/vimrc
-augroup END
-
 set modeline
 
 set number relativenumber
@@ -104,6 +106,16 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Splits open at the bottom and right
 set splitbelow splitright
+
+" Fast saving
+nmap <leader>w :w!<CR>
+nmap <leader>q :wq!<CR>
+
+" Fast editing and reloading of vimrc
+map <leader>ee :e! $XDG_CONFIG_HOME/vim/vimrc<CR>
+map <leader>ec :e! $XDG_CONFIG_HOME/vim/core.vim<CR>
+map <leader>ep :e! $XDG_CONFIG_HOME/vim/plugins.vim<CR>
+map <leader>r  :source $XDG_CONFIG_HOME/vim/vimrc<CR>
 
 "========================================
 "=> Bindings

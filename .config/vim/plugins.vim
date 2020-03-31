@@ -10,17 +10,22 @@ endif
 
 call plug#begin('~/.config/vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/goyo.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'kovetskiy/sxhkd-vim'
+Plug 'itchyny/lightline.vim'
 Plug 'lervag/vimtex'
+Plug 'junegunn/goyo.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'kovetskiy/sxhkd-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'flazz/vim-colorschemes'
 Plug 'whonore/Coqtail'
 Plug 'let-def/vimbufsync'
 call plug#end()
+
+"========================================
+"=> Powerline vim
+"========================================
+" Powerline vim
+let g:powerline_pycmd="py3"
 
 "========================================
 "=> Nerd Tree
@@ -35,45 +40,18 @@ nmap <leader>nn :NERDTreeToggle<CR>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "========================================
-"=> Powerline vim
+"=> light vim
 "========================================
-" Powerline vim
-let g:powerline_pycmd="py3"
-" FIXME: Add runtime path
-
-"========================================
-"=> Airline vim
-"========================================
-let g:airline_theme="angr"
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled = 1
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols={}
-endif
-
-" Unicode Symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" Airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:lightline = {
+  \ 'colorscheme' : 'wombat',
+  \ 'active' : {
+  \   'left' : [ [ 'mode', 'past' ],
+  \              [ 'readonly', 'filename', 'modified' ] ],
+  \   'right' : [ ['lineinfo'],
+  \               ['percent'],
+  \               ['fileformat', 'fileencoding', 'filetype'] ]
+  \ },
+  \ }
 
 "========================================
 "=> Vimtex
@@ -98,3 +76,9 @@ let g:goyo_width=100
 let g:goyo_margin_top=5
 let g:goyo_margin_bottom=5
 nnoremap <silent> <leader>z :Goyo<CR>
+
+"========================================
+"=> vimwiki
+"========================================
+let g:vimwiki_list = [{'path': '~/documents/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
