@@ -9,11 +9,13 @@ if empty(glob('~/.config/vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/vim/plugged')
-Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'dense-analysis/ale'
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -28,18 +30,6 @@ call plug#end()
 let g:powerline_pycmd="py3"
 
 "========================================
-"=> Nerd Tree
-"========================================
-let g:NERDTreeWinPos="right"
-let NERDTreeShowHidden=0
-let NERDTreeIgnore=['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
-
-nmap <leader>nn :NERDTreeToggle<CR>
-
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-"========================================
 "=> light vim
 "========================================
 let g:lightline = {
@@ -52,6 +42,18 @@ let g:lightline = {
   \               ['fileformat', 'fileencoding', 'filetype'] ]
   \ },
   \ }
+
+"========================================
+"=> Nerd Tree
+"========================================
+let g:NERDTreeWinPos="right"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore=['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize=40
+
+nmap <leader>nn :NERDTreeToggle<CR>
+
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "========================================
 "=> Vimtex
@@ -82,3 +84,8 @@ nnoremap <silent> <leader>z :Goyo<CR>
 "========================================
 let g:vimwiki_list = [{'path': '~/documents/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+"========================================
+"=> ale
+"========================================
+let g:ale_completion_enabled = 1

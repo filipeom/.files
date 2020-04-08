@@ -3,7 +3,7 @@ configuration {
 	width: 41;
 	lines: 17;
 	columns: 1;
-	font: "Terminus 16px";
+	font: "Anonymous Pro for Powerline 11";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
