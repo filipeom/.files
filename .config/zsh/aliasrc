@@ -1,13 +1,23 @@
 #!/bin/sh
 
+# Verbosity and sane defaults
+alias \
+  cp="cp -iv" \
+  mv="mv -iv" \
+  rm="rm -iv" \
+  mkdir="mkdir -pv"
+
 # Colorize commands
 alias \
   ls="ls -hN --color=auto --group-directories-first" \
   grep="grep --color=auto" \
   diff="diff --color=auto"
 
-# Dotfiles
+# Abbreviations
 alias \
   e="$EDITOR" \
-  f="$FILE" \
+  f="$FILE"
+
+# Dotfiles
+alias \
   dotfiles="/usr/bin/git --git-dir=${HOME}/.dotfiles/ --work-tree=${HOME}"
