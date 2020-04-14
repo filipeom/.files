@@ -24,12 +24,6 @@ Plug 'let-def/vimbufsync'
 call plug#end()
 
 "========================================
-"=> Powerline vim
-"========================================
-" Powerline vim
-let g:powerline_pycmd="py3"
-
-"========================================
 "=> light vim
 "========================================
 let g:lightline = {
