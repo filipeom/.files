@@ -42,3 +42,4 @@ bspc rule -a Thunderbird desktop='focused:^10'
 bspc rule -a Gscreenshot state=floating
 bspc rule -a Zathura state=tiled
 bspc rule -a Nm-connection-editor state=floating
+bspc rule -a Pavucontrol state=floating

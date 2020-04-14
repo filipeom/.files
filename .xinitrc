@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xprofile=$XDG_CONFIG_HOME/xprofile
+xprofile=$HOME/.xprofile
 userresources=$XDG_CONFIG_HOME/Xresouces
 usermodmap=$XDG_CONFIG_HOME/Xmodmap
 
