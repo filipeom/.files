@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Ncmpcpp MPD Client
+GenericName=MPD Client
+Comment=Listen to music
+Icon=
+Exec=ncmpcpp
+Terminal=true
+Categories=Audio;Player;
