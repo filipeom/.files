@@ -1,3 +1,5 @@
+#!/bin/sh
+
 picom -bf
 xwallpaper --daemon --zoom $HOME/.config/wallpaper.jpg
 nm-applet &

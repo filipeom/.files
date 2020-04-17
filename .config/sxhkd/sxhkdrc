@@ -2,82 +2,82 @@
 #=> wm independent hotkeys
 #========================================
 # Terminal emulator
-alt + Return
+super + Return
 	$TERMINAL
 
 # Screen lock
-alt + shift + x
-	dm-tool lock
+super + shift + x
+	systemctl suspend
 
 # Program launcher
-alt + d
+super + d
 	rofi -show combi
 
 # Make sxhkd relaod its configuration files
-alt + Escape
+super + Escape
 	pkill -USR1 -x sxhkd
 
 #========================================
 #=> Bspwm hotkeys
 #========================================
 # Quit/restart bspwm
-alt + shift + {e,r}
+super + shift + {e,r}
 	bspc {quit,wm -r}
 
 # Close and kill
-alt + {_,shift +}q
+super + {_,shift +}q
 	bspc node -{c,k}
 
 # Alternate between the tiled and monocle layout
-alt + {_,shift +}f
+super + {_,shift +}f
 	bspc {node -t \~fullscreen,desktop -l next}
 
 # Set the window state 
-alt + {t,s,@space}
+super + {t,s,@space}
 	bspc node -t {tiled,pseudo_tiled,floating}
 
 # Focues the node in the given direction
-alt + {_,shift +}{h,j,k,l}
+super + {_,shift +}{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east} --follow
 
 # Focus the next/previous node in the current desktop
-alt + {n,p}
+super + {n,p}
 	bspc node -f {next,prev}.local
 
 # Focus next monitor
-alt + shift + {n,p}
+super + shift + {n,p}
 	bspc monitor -f {next,prev}
 
 # Focus or send to the given desktop
-alt + {_,shift +}{1-9,0}
+super + {_,shift +}{1-9,0}
 	bspc {desktop -f,node -d} focused:'^{1-9,10}'
 
 # Focus or send to the given desktop in the next monitor
-alt + m ; {_,shift +}{1-9,0}
+super + m ; {_,shift +}{1-9,0}
   bspc {desktop -f,node -d} next:'^{1-9,10}' --follow
 
 # Preselect the direction
-alt + ctrl + {h,j,k,l}
+super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # Preselect the ratio
-alt + ctrl + {1-9}
+super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # Cancel the preselection for the focused desktop
-alt + ctrl + space
+super + ctrl + space
 	bspc node -p cancel
 
 # Expand a window by moving one of its side outward
-alt + {Left,Down,Up,Right}
+alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Contract a window by moving one of its side inward
-alt + shift + {Left,Down,Up,Right}
+alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # Move a floating window
-ctrl + {Left,Down,Up,Right}
+alt + {Left,Down,Up,Right}
 	bspc node -v {-40 0,0 40,0 -40,40 0}
 
 #========================================

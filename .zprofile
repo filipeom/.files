@@ -2,7 +2,7 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR="vim"
-export TERMINAL="st"
+export TERMINAL="termite"
 export FILE="ranger"
 export DEFAULT_USER="filipe"
 
