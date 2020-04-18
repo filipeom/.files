@@ -3,7 +3,7 @@
 xwallpaper --daemon --zoom $HOME/.config/wallpaper.jpg
 xcompmgr &
 dunst &
-xet r rate 300 50 &
+xset r rate 300 50 &
 unclutter &
 nm-applet &
 thunderbird &
