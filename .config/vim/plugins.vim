@@ -15,6 +15,7 @@ Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'dense-analysis/ale'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'kovetskiy/sxhkd-vim'
@@ -83,3 +84,16 @@ let g:vimwiki_list = [{'path': '~/documents/vimwiki/',
 "=> ale
 "========================================
 let g:ale_completion_enabled = 1
+
+
+"========================================
+"=> Ctrl-P
+"========================================
+let g:ctrlp_working_path_mode = 0
+
+let g:ctrlp_map = '<C-f>'
+map <leader>j :CtrlP<CR>
+map <C-b> :CtrlPBuffer<CR>
+
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = "^\.git"
