@@ -5,6 +5,14 @@
 super + Return
 	$TERMINAL
 
+# File manager
+super + e
+	$TERMINAL -e $FILE
+
+# Browser
+super + b
+	$BROWSER
+
 # Screen lock
 super + shift + x
 	systemctl suspend

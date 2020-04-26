@@ -2,13 +2,15 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 export EDITOR="vim"
-export TERMINAL="termite"
+export TERMINAL="st"
 export FILE="ranger"
+export BROWSER="qutebrowser"
 export DEFAULT_USER="filipe"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_PICTURES_DIR="/data/home/filipe/Pictures"
 export ZSH="$XDG_DATA_HOME/zsh/oh-my-zsh"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
