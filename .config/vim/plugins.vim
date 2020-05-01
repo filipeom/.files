@@ -9,7 +9,6 @@ if empty(glob('~/.config/vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/vim/plugged')
-Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
@@ -23,20 +22,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'whonore/Coqtail'
 Plug 'let-def/vimbufsync'
 call plug#end()
-
-"========================================
-"=> light vim
-"========================================
-let g:lightline = {
-  \ 'colorscheme' : 'wombat',
-  \ 'active' : {
-  \   'left' : [ [ 'mode', 'past' ],
-  \              [ 'readonly', 'filename', 'modified' ] ],
-  \   'right' : [ ['lineinfo'],
-  \               ['percent'],
-  \               ['fileformat', 'fileencoding', 'filetype'] ]
-  \ },
-  \ }
 
 "========================================
 "=> Nerd Tree

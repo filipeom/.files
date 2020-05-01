@@ -88,8 +88,13 @@ set wrap
 "========================================
 "=> Status line
 "========================================
+set showmode
+
+" Always show statusline
 set laststatus=2
-set noshowmode
+
+" Set statusline
+set statusline=%#StatusLine#\ %#StatusLineNC#\ %f%m\%=\ %y\ %{&fileencoding?&fileencoding:&encoding}\ [%{&fileformat}\]\ %p%%\ %l:%c\ 
 
 "========================================
 "=> Misc
