@@ -94,7 +94,14 @@ set showmode
 set laststatus=2
 
 " Set statusline
-set statusline=%#StatusLine#\ %#StatusLineNC#\ %f%m\%=\ %y\ %{&fileencoding?&fileencoding:&encoding}\ [%{&fileformat}\]\ %p%%\ %l:%c\ 
+set statusline=
+" Color
+set statusline+=%#StatusLineNC# 
+" Right
+set statusline+=\ %t%m
+set statusline+=%=
+" Left
+set statusline+=%y\ %{&fileencoding?&fileencoding:&encoding}\ [%{&fileformat}]\ %p%%\ %l:%-3c
 
 "========================================
 "=> Misc
