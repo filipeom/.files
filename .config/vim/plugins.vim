@@ -1,5 +1,14 @@
+" Config index:
+"   1. Plugin manager configuration
+"   2. Nerd Tree
+"   3. Vimtex
+"   4. Goyo
+"   5. Vimwiki
+"   6. Ale
+"   7. Ctrl-P
+"
 "========================================
-"=> Plugin configuration
+" 1. Plugin manager configuration
 "========================================
 " Install plugin manager
 if empty(glob('~/.config/vim/autoload/plug.vim'))
@@ -24,7 +33,7 @@ Plug 'let-def/vimbufsync'
 call plug#end()
 
 "========================================
-"=> Nerd Tree
+" 2. Nerd Tree
 "========================================
 let g:NERDTreeWinPos="right"
 let NERDTreeShowHidden=0
@@ -36,7 +45,7 @@ nmap <leader>nn :NERDTreeToggle<CR>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "========================================
-"=> Vimtex
+" 3. Vimtex
 "========================================
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_compiler_method = 'latexmk'
@@ -52,7 +61,7 @@ let g:vimtex_compiler_latexmk = {
 nmap <leader>l :VimtexCompile<CR>
 
 "========================================
-"=> Goyo
+" 4. Goyo
 "========================================
 let g:goyo_width=100
 let g:goyo_margin_top=5
@@ -60,19 +69,18 @@ let g:goyo_margin_bottom=5
 nnoremap <silent> <leader>z :Goyo<CR>
 
 "========================================
-"=> vimwiki
+" 5. Vimwiki
 "========================================
 let g:vimwiki_list = [{'path': '~/documents/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
 "========================================
-"=> ale
+" 6. Ale
 "========================================
 let g:ale_completion_enabled = 1
 
-
 "========================================
-"=> Ctrl-P
+" 7. Ctrl-P
 "========================================
 let g:ctrlp_working_path_mode = 0
 

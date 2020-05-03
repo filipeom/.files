@@ -1,5 +1,15 @@
+" Config index:
+"   1. General
+"   2. User Interface
+"   3. Colors and Fonts
+"   4. Text, tab and indent related
+"   5. Statusline
+"   6. Misc
+"   7. Navigation
+"   8. Directories
+"
 "========================================
-"=> General
+" 1. General
 "========================================
 " Sets how many lines of history VIM has to remember
 set history=500
@@ -18,7 +28,7 @@ let mapleader=","
 set guicursor=
 
 "========================================
-"=> User Interface
+" 2. User Interface
 "========================================
 " Always show current position
 set ruler
@@ -48,7 +58,7 @@ set foldcolumn=0
 set scrolloff=10
 
 "========================================
-"=> Colors and Fonts
+" 3. Colors and Fonts
 "========================================
 " Enable syntax highlighting
 syntax enable
@@ -68,7 +78,7 @@ set background=dark
 set encoding=utf-8
 
 "========================================
-"=> Text, tab and indent related
+" 4. Text, tab and indent related
 "========================================
 " Use spaces instead of tabs
 set expandtab
@@ -86,7 +96,7 @@ set si
 set wrap
 
 "========================================
-"=> Status line
+" 5. Statusline
 "========================================
 set showmode
 
@@ -104,7 +114,7 @@ set statusline+=%=
 set statusline+=%y\ %{&fileencoding?&fileencoding:&encoding}\ [%{&fileformat}]\ %p%%\ %l:%-3c
 
 "========================================
-"=> Misc
+" 6. Misc
 "========================================
 set modeline
 
@@ -124,13 +134,11 @@ nmap <leader>w :w!<CR>
 nmap <leader>q :wq!<CR>
 
 " Fast editing and reloading of vimrc
-map <leader>ee :e! $XDG_CONFIG_HOME/vim/vimrc<CR>
-map <leader>ec :e! $XDG_CONFIG_HOME/vim/core.vim<CR>
-map <leader>ep :e! $XDG_CONFIG_HOME/vim/plugins.vim<CR>
+map <leader>e :e! $XDG_CONFIG_HOME/vim<CR>
 map <leader>r  :source $XDG_CONFIG_HOME/vim/vimrc<CR>
 
 "========================================
-"=> Bindings
+" 7. Navigation
 "========================================
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
@@ -160,7 +168,7 @@ autocmd TabLeave * let g:lasttab=tabpagenr()
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g'\"" | endif
 
 "========================================
-"=> Directories
+" 8. Directories
 "========================================
 set undofile
 set undodir=$XDG_DATA_HOME/vim/undo
