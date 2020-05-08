@@ -1,0 +1,29 @@
+#!/bin/sh -e
+
+function main() {
+  local OPTIND=1
+
+  local name="$(date +"%Y%m%d_%H%M%S").png"
+
+  while getopts "ws" opt; do
+    case "${opt}" in
+      w)
+        shotgun -f png "$name"
+        mv "$name" "$XDG_PICTURES_DIR"
+        exit 0
+        ;;
+      s)
+        selection=$(slop -f "-i %i -g %g")
+        shotgun -f png $selection "$name"
+        mv "$name" "$XDG_PICTURES_DIR"
+        exit 0
+        ;;
+    esac
+  done
+  shift "$(( OPTIND - 1 ))"
+  
+  selection=$(slop -f "-i %i -g %g")
+  shotgun -f png $selection - | xclip -t 'image/png' -selection clipboard
+}
+
+main "$@"

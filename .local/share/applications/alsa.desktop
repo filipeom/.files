@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Alsa Volume Control
+GenericName=Volume Control
+Comment=Adjust the volume level
+Icon=multimedia-volume-control
+Exec=alsamixer
+Terminal=true
+Categories=AudioVideo;Audio;Mixer;
