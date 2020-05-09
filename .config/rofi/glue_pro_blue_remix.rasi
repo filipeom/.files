@@ -5,16 +5,16 @@
  * Remixed: Filipe Marques
  ******************************************************************************/
 * {
-    selected-normal-foreground:  rgba ( 255, 255, 255, 100 % );
-    foreground:                  rgba ( 255, 255, 255, 100 % );
+    selected-normal-foreground:  rgba ( 235, 219, 178, 100 % );
+    foreground:                  rgba ( 235, 219, 178, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: transparent;
-    red:                         rgba ( 220, 50, 47, 100 % );
+    red:                         rgba ( 204, 36, 29, 100 % );
     selected-urgent-foreground:  rgba ( 255, 195, 156, 100 % );
-    blue:                        rgba ( 38, 139, 210, 100 % );
+    blue:                        rgba ( 68, 133, 136, 100 % );
     urgent-foreground:           rgba ( 243, 132, 61, 100 % );
     alternate-urgent-background: transparent;
-    active-foreground:           rgba ( 38, 139, 210, 100 % );
+    active-foreground:           @blue;
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 32, 81, 113, 100 % );
     alternate-active-background: transparent;
@@ -23,22 +23,22 @@
     alternate-normal-foreground: @foreground;
     normal-background:           transparent;
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 38, 139, 210, 100 % );
+    selected-normal-background:  rgba ( 68, 133, 136, 85 % );
     border-color:                @foreground;
     spacing:                     2;
-    separatorcolor:              rgba ( 38, 139, 210, 100 % );
+    separatorcolor:              @blue;
     urgent-background:           transparent;
-    selected-urgent-background:  rgba ( 38, 139, 210, 100 % );
+    selected-urgent-background:  @blue;
     alternate-urgent-foreground: @urgent-foreground;
     background-color:            rgba ( 0, 0, 0, 0 % );
     alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 57, 57, 57, 100 % );
-    selected-active-background:  rgba ( 38, 139, 210, 100 % );
+    active-background:           rgba ( 40, 40, 40, 85 % );
+    selected-active-background:  rgba ( 68, 133, 136, 85 % );
 }
 #window {
-    background-color: rgba ( 0, 0, 0, 85 % );
+    background-color: rgba ( 29, 32, 33, 85 % );
     border:           2;
-    border-color:     rgba( 10, 108, 245, 100 % );
+    border-color:     rgba( 69, 133, 136, 100 % );
     padding:          5;
 }
 #mainbox {

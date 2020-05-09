@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xwallpaper --daemon --zoom $HOME/.config/wallpaper.jpg
+xwallpaper --daemon --zoom $HOME/.config/wallpaper.png
 xcompmgr &
 dunst &
 xset r rate 300 50

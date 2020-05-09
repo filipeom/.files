@@ -1,7 +1,7 @@
 #!/bin/sh
 
 xprofile=$HOME/.xprofile
-userresources=$XDG_CONFIG_HOME/Xresouces
+userresources=$XDG_CONFIG_HOME/Xresources
 usermodmap=$XDG_CONFIG_HOME/Xmodmap
 
 [ -f "$userresources" ] && xrdb -merge "$userresources"

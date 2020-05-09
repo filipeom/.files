@@ -1,9 +1,9 @@
 ; vim: ft=dosini
 
 [colors]
-background = #d8000000
-background-alt = #d8181818
-foreground = #d8dfdfdf
+background = #d81d2021
+background-alt = #d8282828
+foreground = #d8ebdbb2
 foreground-alt = #d8555555
 primary = #d8ffb52a
 secondary = #d8e60053
@@ -21,7 +21,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
-line-color = #111111
+line-color = #212121
 
 padding-left = 0
 padding-right = 1
@@ -33,9 +33,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = i3 bspwm mpd
+modules-left = bspwm mpd
 modules-center = xwindow 
-modules-right = alsa memory cpu wlan eth battery temperature date powermenu
+modules-right = xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 1

@@ -92,10 +92,10 @@ alt + {Left,Down,Up,Right}
 #=> Misc
 #========================================
 XF86AudioMute
-	amixer sset Master toggle
+	changeVolume toggle
 
 XF86Audio{Raise,Lower}Volume
-	amixer sset Master 5%{+,-}
+	changeVolume 5%{+,-}
 
 XF86MonBrightness{Up,Down}
 	xbacklight -{inc,dec} 20
