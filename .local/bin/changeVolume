@@ -1,7 +1,7 @@
 #!/bin/sh
 # changeVolume
 
-msgId="991049"
+msgId="1310"
 
 amixer sset Master "$@"
 
