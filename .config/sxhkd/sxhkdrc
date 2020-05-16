@@ -40,6 +40,10 @@ super + {_,shift +}q
 super + {_,shift +}f
 	bspc {node -t \~fullscreen,desktop -l next}
 
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest.local
+
 # Set the window state 
 super + {t,s,@space}
 	bspc node -t {tiled,pseudo_tiled,floating}
