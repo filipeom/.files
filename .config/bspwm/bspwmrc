@@ -10,7 +10,7 @@ sxhkd &
 
 # Spawn bspwm in all monitors
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-  [ $m = DP2 ] && xrandr --output DP2 --pos 1600x0 --auto
+  [ $m = DP2 ] && xrandr --output DP2 --auto --rigth-of eDP1
   bspc monitor $m -d 1 2 3 4 5 6 7 8 9 10
 done
 

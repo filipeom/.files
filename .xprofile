@@ -1,9 +1,9 @@
 #!/bin/sh
 
 xwallpaper --daemon --zoom $HOME/.config/wallpaper.png
-picom -b
+dwmbar
+xcompmgr &
 dunst &
 xset r rate 300 50
 unclutter &
-nm-applet &
 thunderbird &

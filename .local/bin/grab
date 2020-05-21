@@ -1,29 +1,13 @@
-#!/bin/sh -e
+#!/bin/sh
 
-function main() {
-  local OPTIND=1
+name="$(date +"%Y%m%d_%H%M%S").png"
+selection=$(slop -q -f "-i %i -g %g")
+option=$(printf "disk\nclipboard" | dmenu -l 2 -p "Save to:")
 
-  local name="$(date +"%Y%m%d_%H%M%S").png"
-
-  while getopts "ws" opt; do
-    case "${opt}" in
-      w)
-        shotgun -f png "$name"
-        mv "$name" "$XDG_PICTURES_DIR"
-        exit 0
-        ;;
-      s)
-        selection=$(slop -f "-i %i -g %g")
-        shotgun -f png $selection "$name"
-        mv "$name" "$XDG_PICTURES_DIR"
-        exit 0
-        ;;
-    esac
-  done
-  shift "$(( OPTIND - 1 ))"
-  
-  selection=$(slop -f "-i %i -g %g")
+canberra-gtk-play -i screen-capture
+if [ "$option" = "disk" ];then
+  shotgun -f png $selection "$name"
+  mv "$name" "$XDG_PICTURES_DIR"
+else
   shotgun -f png $selection - | xclip -t 'image/png' -selection clipboard
-}
-
-main "$@"
+fi

@@ -8,4 +8,4 @@ usermodmap=$XDG_CONFIG_HOME/Xmodmap
 [ -f "$usermodmap" ] && xmodmap "$usermodmap"
 [ -f "$xprofile" ] && . "$xprofile"
 
-exec bspwm
+exec dwm
