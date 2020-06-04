@@ -1,13 +1,18 @@
 #!/bin/sh
 
+sleep 0.5
+
 state=off
 icon=network-offline
 sound=device-removed
-[ $(nmcli radio wifi) = 'enabled' ] && \
-  icon=network-idle  && \
-  sound=device-added && \
-  state=on
 
-dunstify -a "wifi-toggle" -u normal -i "$icon" -r "1118" \
+if [ $(nmcli radio wifi) = 'enabled' ]
+then
+  icon=network-idle
+  sound=device-added
+  state=on
+fi
+
+dunstify -a "wifi-toggle" -u normal -i "$icon" -r "1118213" \
             "Wifi" "Device is ${state}line."
 canberra-gtk-play -i "$sound" -d "wifi-toggle"

@@ -7,10 +7,11 @@ amixer sset Master "$@"
 volume="$(amixer get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9]*//g')"
 mute="$(amixer get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
 if [[ $volume == 0 || "$mute" == "off"  ]]; then
-  dunstify -a "change-vol" -u normal -i audio-volume-muted -r "$msgId" "Volume muted" 
+  dunstify -a "change-vol" -u normal -i audio-volume-muted -r "$msgId" \
+              "Volume muted" 
 else
   dunstify -a "change-vol" -u normal -i audio-volume-high -r "$msgId" \
-              "Volume: ${volume}%" "$(getProgressString 10 "<b>──</b>" "──" $volume)"
+              "Volume: ${volume}%" "[$(progress-string 20 "#" "-" $volume)]"
 fi
 
 canberra-gtk-play -i audio-volume-change -d "change-vol"
