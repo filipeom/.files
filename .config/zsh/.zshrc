@@ -83,3 +83,6 @@ powerline-daemon -q
 
 # Syntax highlighting like vim
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# opam configuration
+test -r /home/filipe/.opam/opam-init/init.zsh && . /home/filipe/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
