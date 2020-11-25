@@ -6,6 +6,8 @@
 "   5. Vimwiki
 "   6. Ale
 "   7. Ctrl-P
+"   8. Colorscheme
+"   9. Dafny
 "
 "========================================
 " 1. Plugin manager configuration
@@ -30,6 +32,8 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'whonore/Coqtail'
 Plug 'let-def/vimbufsync'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mlr-msft/vim-loves-dafny', {'for': 'dafny'}
 call plug#end()
 
 "========================================
@@ -38,7 +42,7 @@ call plug#end()
 let g:NERDTreeWinPos="right"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore=['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=30
 
 nmap <leader>nn :NERDTreeToggle<CR>
 
@@ -47,6 +51,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "========================================
 " 3. Vimtex
 "========================================
+let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_compiler_latexmk = {
@@ -78,6 +83,9 @@ let g:vimwiki_list = [{'path': '~/documents/vimwiki/',
 " 6. Ale
 "========================================
 let g:ale_completion_enabled = 1
+let g:ale_echo_msg_error_str = 'Err'
+let g:ale_echo_msg_warning_str = 'Wrn'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]' 
 
 "========================================
 " 7. Ctrl-P
@@ -90,3 +98,16 @@ map <C-b> :CtrlPBuffer<CR>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = "^\.git"
+
+
+"========================================
+" 8. Colorscheme
+"========================================
+"colorscheme solarized
+
+"========================================
+" 9. Dafny
+"========================================
+let g:syntastic_mode_map = {
+      \ "mode" : "active",
+      \ "passive_filetypes" : ["dafny"]}

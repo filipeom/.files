@@ -49,7 +49,7 @@ set hlsearch
 set incsearch
 
 " Don't redraw while executing macros
-set lazyredraw
+set nolazyredraw
 
 " Add a bit extra margin to the left
 set foldcolumn=0
@@ -57,6 +57,8 @@ set foldcolumn=0
 " Set lines around cursor when scrolling
 set scrolloff=10
 
+" See line breaks and carriage
+set list
 "========================================
 " 3. Colors and Fonts
 "========================================
@@ -68,11 +70,11 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-" Set colorscheme
-colorscheme desert
-
 " Set dark background
 set background=dark
+
+" Set colorscheme
+colorscheme desert
 
 " Set utf-8 character encodings
 set encoding=utf-8

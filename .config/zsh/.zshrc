@@ -5,7 +5,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="fwalch"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -18,7 +18,7 @@ CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -27,7 +27,7 @@ CASE_SENSITIVE="true"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
@@ -65,7 +65,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git encode64 extract archlinux)
+plugins=(git encode64 extract archlinux zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -75,14 +75,14 @@ source $ZSH/oh-my-zsh.sh
 # Include hidden files in autocomplete
 _comp_options+=(globdots)
 
+# opam configuration
+eval $(opam env)
+# configure lib path
+export LD_LIBRARY_PATH="${HOME}/.opam/4.08.1/lib/z3/:${LD_LIBRARY_PATH}"
+export PATH="${HOME}/documents/uni/5year/1sem/qs/dafny-base/dafny/Binaries/:${PATH}"
+
 # Aliases and functions
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
 [ -f "${ZDOTDIR}/functionsrc" ] && source "${ZDOTDIR}/functionsrc"
 
 powerline-daemon -q
-
-# Syntax highlighting like vim
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
-# opam configuration
-test -r /home/filipe/.opam/opam-init/init.zsh && . /home/filipe/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
