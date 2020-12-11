@@ -73,9 +73,6 @@ endif
 " Set dark background
 set background=dark
 
-" Set colorscheme
-colorscheme desert
-
 " Set utf-8 character encodings
 set encoding=utf-8
 
@@ -120,7 +117,7 @@ set statusline+=%y\ %{&fileencoding?&fileencoding:&encoding}\ [%{&fileformat}]\ 
 "========================================
 set modeline
 
-set number relativenumber
+set number
 
 " Enable auto completion:
 set wildmode=longest,list,full
@@ -138,6 +135,9 @@ nmap <leader>q :wq!<CR>
 " Fast editing and reloading of vimrc
 map <leader>e :e! $XDG_CONFIG_HOME/vim<CR>
 map <leader>r  :source $XDG_CONFIG_HOME/vim/vimrc<CR>
+
+" Break lines in command mode
+map <C-i> i<CR><Esc>
 
 "========================================
 " 7. Navigation

@@ -19,7 +19,7 @@ super + shift + x
 
 # Program launcher
 super + d
-	rofi -show combi
+	
 
 # Make sxhkd relaod its configuration files
 super + Escape
@@ -48,16 +48,12 @@ super + g
 super + {t,s,@space}
 	bspc node -t {tiled,pseudo_tiled,floating}
 
-# Focues the node in the given direction
-super + {_,shift +}{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east} --follow
-
 # Focus the next/previous node in the current desktop
-super + {n,p}
-	bspc node -f {next,prev}.local
+super + {j,k}
+	bspc node -f {prev,next}.local
 
 # Focus next monitor
-super + shift + {n,p}
+super + {comma, period}
 	bspc monitor -f {next,prev}
 
 # Focus or send to the given desktop
@@ -65,8 +61,8 @@ super + {_,shift +}{1-9,0}
 	bspc {desktop -f,node -d} focused:'^{1-9,10}'
 
 # Focus or send to the given desktop in the next monitor
-super + m ; {_,shift +}{1-9,0}
-  bspc {desktop -f,node -d} next:'^{1-9,10}' --follow
+super + shift + {comma, period}
+  bspc node -d {prev,next}:focused --follow
 
 # Preselect the direction
 super + ctrl + {h,j,k,l}

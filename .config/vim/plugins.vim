@@ -6,8 +6,8 @@
 "   5. Vimwiki
 "   6. Ale
 "   7. Ctrl-P
-"   8. Colorscheme
-"   9. Dafny
+"   8. lightline
+"   9. Colorscheme
 "
 "========================================
 " 1. Plugin manager configuration
@@ -26,14 +26,18 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'dense-analysis/ale'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'whonore/Coqtail'
 Plug 'let-def/vimbufsync'
-Plug 'altercation/vim-colors-solarized'
 Plug 'mlr-msft/vim-loves-dafny', {'for': 'dafny'}
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
 call plug#end()
 
 "========================================
@@ -99,15 +103,37 @@ map <C-b> :CtrlPBuffer<CR>
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = "^\.git"
 
+"========================================
+" 8. lightline
+"========================================
+let g:lightline = {
+  \ 'colorscheme' : 'powerline',
+  \ 'active' : {
+  \   'left' : [ ['mode', 'paste'],
+  \              ['fugitive', 'readonly', 'filename', 'modified'] ],
+  \   'right' : [ ['lineinfo'], 
+  \               ['percent'],
+  \               ['fileformat', 'fileencoding', 'filetype'] ]
+  \ },
+  \ 'component' : {
+  \   'readonly' : '%{&filetype=="help"?"":&readonly?"🔒":""}',
+  \   'modified' : '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+  \   'fugitive' : '%{exists("*FugitiveHead")?FugitiveHead():""}'
+  \ },
+  \ 'component_visible_condition': {
+  \   'readonly': '(&filetype!="help"&& &readonly)',
+  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+  \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+  \ 
+  \ },
+  \ }
 
 "========================================
-" 8. Colorscheme
+" 9. colorscheme
 "========================================
-"colorscheme solarized
+colorscheme gruvbox
 
-"========================================
-" 9. Dafny
-"========================================
-let g:syntastic_mode_map = {
-      \ "mode" : "active",
-      \ "passive_filetypes" : ["dafny"]}
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'hard'
+
+hi Normal guibg=NONE ctermbg=NONE

@@ -1,0 +1,39 @@
+Config { font     = "xft:monospace:weight=bold:pixelsize=12:antialias=true:hinting=true"
+        , bgColor = "#000000"
+        , fgColor = "grey"
+        , position = Static {xpos = 0, ypos = 0, width = 1535, height = 20}
+        , lowerOnStart = True
+        , hideOnStart = False
+        , allDesktops = True
+        , persistent = True
+        , commands = [ 
+            -- Time and date
+            Run Date "%a %d %b %H:%M:%S %Y" "date" 50
+            -- Cpu usage in percent
+            , Run Cpu [ "-L", "3", "-H", "50"
+                      , "--high", "red", "--normal", "green"] 10
+            -- Ram used number and percent
+            , Run Memory ["-t", "Mem: <usedratio>%"] 20
+            -- Battery
+            , Run Battery [  "-t", "<acstatus>"
+                           , "-L", "20", "-H", "80"
+                           , "-l", "red", "-h", "green"
+                           , "--", "-O", "BAT: +<left>%"
+                                 , "-i", "BAT: ?<left>% (<timeleft>)"
+                                 , "-o", "BAT: -<left>% (<timeleft>)"
+                           ] 10
+            -- Disk space free
+            , Run DiskU [("/", "hdd: <free> free")] [] 60
+            -- Runs a standard shell command 'uname -r' to get kernel version
+            , Run Com "uname" ["-r"] "" 3600
+            , Run CoreTemp ["-t", "<core0>°C"
+                            , "-L", "40", "-H", "60"
+                            , "-l", "cyan", "-n", "gray90", "-h", "red"] 50
+            , Run Network "enp0s25" [ "-L", "0", "-H", "70", "--normal", "green", "--high", "red" ] 10
+            -- Prints out the left side items such as workspaces, layout, etc.
+            , Run UnsafeStdinReader
+        ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "  %UnsafeStdinReader% }{ %cpu%  %coretemp%  | %memory% | %battery% | %date% "
+        }

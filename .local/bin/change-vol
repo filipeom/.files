@@ -1,12 +1,13 @@
 #!/bin/sh
 
 msgId="1310"
+mixer=pulsemixer
 
-amixer sset Master "$@"
+$mixer $@
 
-volume="$(amixer get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9]*//g')"
-mute="$(amixer get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
-if [[ $volume == 0 || "$mute" == "off"  ]]; then
+volume="$($mixer --get-volume | awk '{print $1}' | sed 's/[^0-9]*//g')"
+mute="$($mixer --get-mute  | sed 's/[^0-9]*//g')"
+if [[ $volume == 0 || $mute == 1  ]]; then
   dunstify -a "change-vol" -u normal -i audio-volume-muted -r "$msgId" \
               "Volume muted" 
 else
