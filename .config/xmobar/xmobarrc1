@@ -1,4 +1,4 @@
-Config { font     = "xft:monospace:style=bold:pixelsize=14:antialias=true:hinting=true"
+Config { font     = "xft:monospace:style=bold:size=10:antialias=true:hinting=true"
         , additionalFonts = [ "xft:Siji:pixelsize=12" ]
         , bgColor = "#000000"
         , fgColor = "grey"
