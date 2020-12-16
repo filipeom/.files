@@ -1,7 +1,8 @@
-Config { font     = "xft:monospace:weight=bold:pixelsize=12:antialias=true:hinting=true"
+Config { font     = "xft:monospace:style=bold:pixelsize=14:antialias=true:hinting=true"
+        , additionalFonts = [ "xft:Siji:pixelsize=12" ]
         , bgColor = "#000000"
         , fgColor = "grey"
-        , position = Static {xpos = 1600, ypos = 0, width = 1920, height = 20}
+        , position = Top
         , lowerOnStart = True
         , hideOnStart = False
         , allDesktops = True
@@ -35,5 +36,5 @@ Config { font     = "xft:monospace:weight=bold:pixelsize=12:antialias=true:hinti
         ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "  %UnsafeStdinReader% }{ %cpu%  %coretemp%  | %memory% | %battery% | %date%"
+        , template = "  %UnsafeStdinReader% }{ %cpu%  %coretemp%  | %memory% | %battery% | %date% "
         }

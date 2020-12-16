@@ -1,7 +1,8 @@
-Config { font     = "xft:monospace:weight=bold:pixelsize=12:antialias=true:hinting=true"
+Config { font     = "xft:monospace:style=bold:pixelsize=14:antialias=true:hinting=true"
+        , additionalFonts = [ "xft:Siji:pixelsize=12" ]
         , bgColor = "#000000"
         , fgColor = "grey"
-        , position = Static {xpos = 0, ypos = 0, width = 1535, height = 20}
+        , position = TopW L 96
         , lowerOnStart = True
         , hideOnStart = False
         , allDesktops = True

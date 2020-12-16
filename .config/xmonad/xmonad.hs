@@ -60,6 +60,10 @@ myWorkspaces     = map show [1..9]
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
 
+-- dmenu command
+--
+myDmenuCmd = "dmenu_run -fn monospace:style=medium:pixelsize=14 -nb \"#000000\" -nf \"#d3d3d3\""
+
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
@@ -69,7 +73,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm              , xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_d     ), spawn "dmenu_run -fn monospace:pixelsize=14")
+    , ((modm,               xK_d     ), spawn myDmenuCmd)
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -254,8 +258,8 @@ myManageHook = composeAll
     [ className =? "google-calendar-nativefier-e22938" --> doShift (myWorkspaces !! 7)
     , className =? "Slack"          --> doShift (myWorkspaces !! 3)
     , className =? "discord"        --> doShift (myWorkspaces !! 3)
-    , className =? "Spotify"        --> doShift (myWorkspaces !! 4)
     , className =? "Thunderbird"    --> doShift (myWorkspaces !! 8)
+    , title     =? "ncmpcpp"        --> doShift (myWorkspaces !! 4)
     , className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
@@ -292,7 +296,7 @@ myLogHook h = dynamicLogWithPP $ def
 --
 -- By default, do nothing.
 myStartupHook = do
-  spawnOnce "trayer --edge top --align right --widthtype pixel --width 65 --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x000000 --height 20 &"
+  spawnOnce "trayer --edge top --align right --widthtype percent --width 4 --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x000000 --height 21 &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xwallpaper --daemon --zoom $HOME/.config/wallpaper.jpg
+xwallpaper --daemon --zoom $HOME/.config/wallpaper.png
 #dwmstatus &
 xcompmgr -fF -I-.05 -O-.10 -D3 -t-1 -l-3 -r4.2 -o.5 > /dev/null 2>&1 &
 dunst &
