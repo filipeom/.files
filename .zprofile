@@ -2,10 +2,10 @@
 export PATH="$HOME"/.local/bin:"$PATH"
 
 # User
-export EDITOR="vim"
-export TERMINAL="st"
+export EDITOR="nvim"
+export TERMINAL="alacritty"
 export FILE="ranger"
-export BROWSER="qutebrowser"
+export BROWSER="firefox"
 export DEFAULT_USER="filipe"
 
 # XDG Base Directory
@@ -20,7 +20,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
 export HISTFILE="$XDG_DATA_HOME"/zsh/history
 
 # Vim
-export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+#export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
 
 # XMONAD
 export XMONAD_CONFIG_DIR="$XDG_CONFIG_HOME"/xmonad

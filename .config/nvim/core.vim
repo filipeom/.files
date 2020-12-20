@@ -27,6 +27,12 @@ let mapleader=","
 " Cursor Shape
 set guicursor=
 
+" Cursor line
+set cursorline
+
+" disable cursor change
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+
 "========================================
 " 2. User Interface
 "========================================
@@ -133,8 +139,8 @@ nmap <leader>w :w!<CR>
 nmap <leader>q :wq!<CR>
 
 " Fast editing and reloading of vimrc
-map <leader>e :e! $XDG_CONFIG_HOME/vim<CR>
-map <leader>r  :source $XDG_CONFIG_HOME/vim/vimrc<CR>
+map <leader>e :e! $XDG_CONFIG_HOME/nvim<CR>
+map <leader>r  :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " Break lines in command mode
 map <C-i> i<CR><Esc>

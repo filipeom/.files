@@ -146,7 +146,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_b     ), spawn "$BROWSER")
 
     -- Run file manager
-    , ((modm              , xK_p     ), spawn "st -e $FILE")
+    , ((modm              , xK_p     ), spawn ("$TERMINAL -e $FILE"))
     ]
     ++
 
@@ -330,11 +330,11 @@ main =  do
     { ppOutput = \x -> hPutStrLn h x >> hPutStrLn h' x
       , ppCurrent = xmobarColor "yellow" "" . wrap "[" "]"
       , ppVisible = wrap "" "+"
-      , ppHidden  = xmobarColor "#bbbbbb" "" . wrap "" "-"
+      , ppHidden  = wrap "" "-"
       , ppHiddenNoWindows = xmobarColor "#444444" ""
+      , ppUrgent  = xmobarColor "red" "" . wrap "" "!"
       , ppTitle   = xmobarColor "cyan" "" . shorten 50
       , ppSep     = " : "
-      , ppUrgent  = xmobarColor "#ff0000" "" . wrap "" "!"
       , ppOrder   = \(ws:l:t:ex) -> [ws] ++ ex ++ [t]
     },
     startupHook        = myStartupHook
