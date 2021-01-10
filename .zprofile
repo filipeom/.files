@@ -5,7 +5,7 @@ export PATH="$HOME"/.local/bin:"$PATH"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export FILE="ranger"
-export BROWSER="firefox"
+export BROWSER="chromium"
 export DEFAULT_USER="filipe"
 
 # XDG Base Directory

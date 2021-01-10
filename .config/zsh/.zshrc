@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 eval $(opam env)
 # configure lib path
 export LD_LIBRARY_PATH="${HOME}/.opam/4.08.1/lib/z3/:${LD_LIBRARY_PATH}"
-export PATH="${HOME}/documents/uni/5year/1sem/qs/dafny-base/dafny/Binaries/:${PATH}"
+export PATH="${HOME}/documents/uni/5year/1sem/qs/dafny-base/:${PATH}"
 
 # Aliases and functions
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"

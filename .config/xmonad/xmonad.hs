@@ -7,6 +7,7 @@ import XMonad.Util.SpawnOnce
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops as H
 import XMonad.Hooks.WorkspaceHistory
 
 import XMonad.Layout.Spacing
@@ -128,7 +129,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- See also the statusBar function from Hooks.DynamicLog.
     --
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
-    , ((modm              , xK_f     ), sendMessage (Toggle "Full"))
+    , ((modm              , xK_f     ), (sendMessage ToggleStruts) >> (sendMessage (Toggle "Full")))
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -224,7 +225,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout =   avoidStruts 
            $ toggleLayouts (noBorders Full) 
            $ smartBorders
-           $ spacingRaw False (Border 5 5 20 20) True (Border 5 5 5 5) True
+           -- $ spacingRaw False (Border 5 5 5 5) True (Border 5 5 5 5) True
            (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -259,7 +260,6 @@ myManageHook = composeAll
     , className =? "Slack"          --> doShift (myWorkspaces !! 3)
     , className =? "discord"        --> doShift (myWorkspaces !! 3)
     , className =? "Thunderbird"    --> doShift (myWorkspaces !! 8)
-    , title     =? "ncmpcpp"        --> doShift (myWorkspaces !! 4)
     , className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
@@ -274,7 +274,7 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = mempty
+myEventHook = H.fullscreenEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -306,9 +306,10 @@ myStartupHook = do
 main =  do
   h  <- spawnPipe "xmobar -x 0 /home/filipe/.config/xmobar/xmobarrc0"
   h' <- spawnPipe "xmobar -x 1 /home/filipe/.config/xmobar/xmobarrc1"
-  xmonad $ docks 
-         $ fullscreenSupport
-         $ def {
+  xmonad 
+    $ docks 
+    $ fullscreenSupport
+    $ def {
     -- simple stuff
     terminal           = myTerminal,
     focusFollowsMouse  = myFocusFollowsMouse,
@@ -325,7 +326,7 @@ main =  do
     -- hooks, layouts
     layoutHook         = myLayout,
     manageHook         = myManageHook <+> manageDocks <+> fullscreenManageHook,
-    handleEventHook    = myEventHook <+> fullscreenEventHook,
+    handleEventHook    = myEventHook,
     logHook            = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
     { ppOutput = \x -> hPutStrLn h x >> hPutStrLn h' x
       , ppCurrent = xmobarColor "yellow" "" . wrap "[" "]"

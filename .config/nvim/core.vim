@@ -24,15 +24,6 @@ autocmd FocusGained,BufEnter * checktime
 " Leader
 let mapleader=","
 
-" Cursor Shape
-set guicursor=
-
-" Cursor line
-set cursorline
-
-" disable cursor change
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
-
 "========================================
 " 2. User Interface
 "========================================
@@ -63,8 +54,14 @@ set foldcolumn=0
 " Set lines around cursor when scrolling
 set scrolloff=10
 
+set lcs=tab:>·,trail:·,nbsp:+,eol:¬
+
 " See line breaks and carriage
-set list
+"set list
+
+" Cursor Shape
+set guicursor=
+
 "========================================
 " 3. Colors and Fonts
 "========================================
@@ -162,6 +159,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Useful mappings for managing tabs
+map J : tabp<CR>
+map K : tabn<CR>
 map <leader>tn : tabnew<CR>
 map <leader>to : tabonly<CR>
 map <leader>tc : tabclose<CR>
@@ -179,8 +178,8 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " 8. Directories
 "========================================
 set undofile
-set undodir=$XDG_DATA_HOME/vim/undo
-set directory=$XDG_DATA_HOME/vim/swap
-set backupdir=$XDG_DATA_HOME/vim/backup
-set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
-set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+set undodir=$XDG_DATA_HOME/nvim/undo
+set directory=$XDG_DATA_HOME/nvim/swap
+set backupdir=$XDG_DATA_HOME/nvim/backup
+set viminfo+='1000,n$XDG_DATA_HOME/nvim/viminfo
+"set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after

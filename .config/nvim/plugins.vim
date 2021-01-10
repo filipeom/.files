@@ -27,18 +27,14 @@ Plug 'vimwiki/vimwiki'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'whonore/Coqtail'
 Plug 'let-def/vimbufsync'
 Plug 'mlr-msft/vim-loves-dafny', {'for': 'dafny'}
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'shinchu/lightline-gruvbox.vim'
 call plug#end()
 
 "========================================
@@ -109,8 +105,8 @@ let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
 " Empty value to disable preview window altogether
 let g:fzf_preview_window = []
 
-map <leader>ff :Files<CR>
-map <leader>fs :Rg<CR>
+map <leader>j :Files<CR>
+map <leader>s :Rg<CR>
 
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
@@ -123,34 +119,34 @@ command! -bang -nargs=* Rg
 "========================================
 " 8. lightline
 "========================================
-let g:lightline = {
-  \ 'colorscheme' : 'powerline',
-  \ 'active' : {
-  \   'left' : [ ['mode', 'paste'],
-  \              ['fugitive', 'readonly', 'filename', 'modified'] ],
-  \   'right' : [ ['lineinfo'], 
-  \               ['percent'],
-  \               ['fileformat', 'fileencoding', 'filetype'] ]
-  \ },
-  \ 'component' : {
-  \   'readonly' : '%{&filetype=="help"?"":&readonly?"🔒":""}',
-  \   'modified' : '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-  \   'fugitive' : '%{exists("*FugitiveHead")?FugitiveHead():""}'
-  \ },
-  \ 'component_visible_condition': {
-  \   'readonly': '(&filetype!="help"&& &readonly)',
-  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-  \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-  \ 
-  \ },
-  \ }
+"let g:lightline = {
+"  \ 'colorscheme' : 'powerline',
+"  \ 'active' : {
+"  \   'left' : [ ['mode', 'paste'],
+"  \              ['fugitive', 'readonly', 'filename', 'modified'] ],
+"  \   'right' : [ ['lineinfo'], 
+"  \               ['percent'],
+"  \               ['fileformat', 'fileencoding', 'filetype'] ]
+"  \ },
+"  \ 'component' : {
+"  \   'readonly' : '%{&filetype=="help"?"":&readonly?"🔒":""}',
+"  \   'modified' : '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+"  \   'fugitive' : '%{exists("*FugitiveHead")?FugitiveHead():""}'
+"  \ },
+"  \ 'component_visible_condition': {
+"  \   'readonly': '(&filetype!="help"&& &readonly)',
+"  \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+"  \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+"  \ 
+"  \ },
+"  \ }
 
 "========================================
 " 9. colorscheme
 "========================================
-colorscheme gruvbox
-
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
+
+colorscheme gruvbox
 
 hi Normal guibg=NONE ctermbg=NONE
