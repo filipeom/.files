@@ -12,7 +12,7 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 env:
-  TERM: alacritty
+  TERM: xterm-256color
   WINIT_X11_SCALE_FACTOR: "1"
 
 window:
@@ -38,11 +38,11 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 10
-    y: 10
+    x: 2
+    y: 2
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -99,24 +99,24 @@ font:
 
   # Normal (roman) font face
   normal:
-    family: monospace
-    style: Regular
+    family: IBM Plex Mono
+    style: Medium
 
   # Bold font face
   bold:
-    family: monospace
+    family: IBM Plex Mono
     style: Bold
 
   # Italic font face
   italic:
     # Font family
-    family: monospace
-    style: Oblique
+    family: IBM Plex Mono
+    style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: monospace
-    style: Bold Oblique
+    family: IBM Plex Mono
+    style: Bold Italic
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -210,7 +210,7 @@ colors: *dark
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
-#bell:
+bell:
   # Visual Bell Animation
   #
   # Animation effect for flashing the screen when the visual bell is rung.
@@ -226,11 +226,11 @@ colors: *dark
   #   - EaseOutExpo
   #   - EaseOutCirc
   #   - Linear
-  #animation: EaseOutExpo
+  animation: EaseOutExpo
 
   # Duration of the visual bell flash in milliseconds. A `duration` of `0` will
   # disable the visual bell animation.
-  #duration: 0
+  duration: 1
 
   # Visual bell animation color.
   #color: '#ffffff'
@@ -246,7 +246,9 @@ colors: *dark
   #     program: notify-send
   #     args: ["Hello, World!"]
   #
-  #command: None
+  #command:
+  #program: canberra-gtk-play
+  #  args: ["-i", "bell"]
 
 # Background opacity
 #
@@ -269,7 +271,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
 
   # Vi mode cursor style
   #
