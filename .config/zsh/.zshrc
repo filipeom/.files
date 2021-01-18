@@ -5,7 +5,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="filipeom"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,13 +76,13 @@ source $ZSH/oh-my-zsh.sh
 #_comp_options+=(globdots)
 
 # opam configuration
-eval $(opam env)
+#eval $(opam env)
 # configure lib path
-export LD_LIBRARY_PATH="${HOME}/.opam/4.08.1/lib/z3/:${LD_LIBRARY_PATH}"
-export PATH="${HOME}/documents/uni/5year/1sem/qs/dafny-base/:${PATH}"
+#export LD_LIBRARY_PATH="${HOME}/.opam/4.08.1/lib/z3/:${LD_LIBRARY_PATH}"
+#export PATH="${HOME}/documents/uni/5year/1sem/qs/dafny-base/:${PATH}"
 
 # Aliases and functions
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
 [ -f "${ZDOTDIR}/functionsrc" ] && source "${ZDOTDIR}/functionsrc"
 
-powerline-daemon -q
+#powerline-daemon -q
