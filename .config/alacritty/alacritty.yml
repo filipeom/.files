@@ -6,7 +6,7 @@
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
 #import:
-  #- /home/filipe/.config/alacritty/colorscheme.yml
+#  - /home/filipe/.config/alacritty/colorscheme.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -38,11 +38,11 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: true
+  dynamic_padding: false
 
   # Window decorations
   #
@@ -207,6 +207,7 @@ schemes:
       white:   '#3c3836'
 
 colors: *dark
+
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
@@ -256,10 +257,10 @@ bell:
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 0.8
 
-#selection:
+selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
@@ -271,7 +272,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Beam
+  style: Block
 
   # Vi mode cursor style
   #

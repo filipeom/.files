@@ -63,7 +63,7 @@ myFocusedBorderColor = "#ff0000"
 
 -- dmenu command
 --
-myDmenuCmd = "dmenu_run -fn monospace:style=medium:pixelsize=14 -nb \"#000000\" -nf \"#d3d3d3\""
+myDmenuCmd = "dmenu_run -b -fn monospace:style=medium:size=10 -nb \"#000000\" -nf \"#dfdfdf\""
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -225,7 +225,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout =   avoidStruts 
            $ toggleLayouts (noBorders Full) 
            $ smartBorders
-           $ spacingRaw False (Border 5 5 5 5) True (Border 5 5 5 5) True
+           -- $ spacingRaw False (Border 5 25 30 30) True (Border 5 5 10 10) True
            (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -296,7 +296,7 @@ myLogHook h = dynamicLogWithPP $ def
 --
 -- By default, do nothing.
 myStartupHook = do
-  spawnOnce "trayer --edge top --align right --widthtype percent --width 4 --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 1 --transparent true --alpha 0 --tint 0x000000 --height 21 &"
+  spawnOnce "trayer --edge top --align right --widthtype percent --width 4 --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x000000 --height 22 &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -329,12 +329,12 @@ main =  do
     handleEventHook    = myEventHook,
     logHook            = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
     { ppOutput = \x -> hPutStrLn h x >> hPutStrLn h' x
-      , ppCurrent = xmobarColor "yellow" "" . wrap "[" "]"
-      , ppVisible = wrap "" "+"
-      , ppHidden  = wrap "" "-"
-      , ppHiddenNoWindows = xmobarColor "#444444" ""
+      , ppCurrent = xmobarColor "yellow" ""  . wrap "[" "]"
+      , ppVisible = xmobarColor "#dfdfdf" "" . wrap "" "+"
+      , ppHidden  = xmobarColor "#dfdfdf" ""
+      , ppHiddenNoWindows = xmobarColor "#555" ""
       , ppUrgent  = xmobarColor "red" "" . wrap "" "!"
-      , ppTitle   = xmobarColor "cyan" "" . shorten 50
+      , ppTitle   = xmobarColor "cyan" "" . shorten 25
       , ppSep     = " : "
       , ppOrder   = \(ws:l:t:ex) -> [ws] ++ ex ++ [t]
     },
