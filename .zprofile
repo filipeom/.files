@@ -47,11 +47,4 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 export LESSHISTFILE=-
 
-if test -d /etc/profile.d/; then
-	for profile in /etc/profile.d/*.sh; do
-		test -r "$profile" && . "$profile"
-	done
-	unset profile
-fi
-
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx

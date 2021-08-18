@@ -35,6 +35,7 @@ Plug 'whonore/Coqtail'
 Plug 'let-def/vimbufsync'
 Plug 'mlr-msft/vim-loves-dafny', {'for': 'dafny'}
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'neovimhaskell/haskell-vim'
 call plug#end()
 
@@ -56,9 +57,10 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_compiler_method = 'latexmk'
+"    \ 'build_dir' : 'build',
 let g:vimtex_compiler_latexmk = {
-    \ 'build_dir' : '_build',
     \ 'options' : [
+    \   '-pdf',
     \   '-shell-escape',
     \   '-verbose',
     \   '-file-line-error',
@@ -149,6 +151,20 @@ command! -bang -nargs=* Rg
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
 
-colorscheme gruvbox
+"let g:solarized_termcolors=256
 
-hi Normal guibg=NONE ctermbg=NONE
+function FlipBackground()
+  if (&background == "dark")
+    set background=light
+  else
+    set background=dark
+  endif
+endfunction
+
+map <leader>f :call FlipBackground()<CR>
+
+set background=light
+
+colorscheme solarized
+
+"hi Normal guibg=NONE ctermbg=NONE

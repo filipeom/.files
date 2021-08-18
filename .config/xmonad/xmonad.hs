@@ -35,7 +35,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 2
+myBorderWidth   = 1
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -58,12 +58,12 @@ myWorkspaces     = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#444444"
+myFocusedBorderColor = "#ffffff"
 
 -- dmenu command
 --
-myDmenuCmd = "dmenu_run -b -fn monospace:style=medium:size=10 -nb \"#000000\" -nf \"#dfdfdf\""
+myDmenuCmd = "dmenu_run -b -fn Ubuntu\\ Mono:size=12 -nb \"#000000\" -nf \"#dfdfdf\""
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.

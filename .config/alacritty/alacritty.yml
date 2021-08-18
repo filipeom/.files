@@ -5,8 +5,8 @@
 # These configuration files will be loaded in order, replacing values in files
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
-#import:
-#  - /home/filipe/.config/alacritty/colorscheme.yml
+import:
+  - /home/filipe/.config/alacritty/solarized.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -42,7 +42,7 @@ window:
     y: 0
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -95,27 +95,27 @@ scrolling:
 
 # Font configuration
 font:
-  size: 10.5
+  size: 12
 
   # Normal (roman) font face
   normal:
-    family: IBM Plex Mono
-    style: Medium
+    family: Ubuntu Mono
+    style: Regular
 
   # Bold font face
   bold:
-    family: IBM Plex Mono
+    family: Ubuntu Mono
     style: Bold
 
   # Italic font face
   italic:
     # Font family
-    family: IBM Plex Mono
+    family: Ubuntu Mono
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: IBM Plex Mono
+    family: Ubuntu Mono
     style: Bold Italic
 
   # Offset is the extra space around each character. `offset.y` can be thought
@@ -133,80 +133,7 @@ font:
   #  y: 0
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
-
-# Colors (Gruvbox dark)
-schemes:
-  gruvbox_dark: &dark
-    # Default colors
-    primary:
-      background: '#1d2021'
-      foreground: '#ebdbb2'
-
-    # Cursor colors
-    cursor:
-      text: CellBackground
-      cursor: CellForeground
-
-    # Normal colors
-    normal:
-      black:   '#1d2021'
-      red:     '#cc241d'
-      green:   '#98971a'
-      yellow:  '#d79921'
-      blue:    '#458588'
-      magenta: '#b16286'
-      cyan:    '#689d6a'
-      white:   '#a89984'
-
-    # Bright colors
-    bright:
-      black:   '#928374'
-      red:     '#fb4934'
-      green:   '#b8bb26'
-      yellow:  '#fabd2f'
-      blue:    '#83a598'
-      magenta: '#d3869b'
-      cyan:    '#8ec07c'
-      white:   '#ebdbb2'
-
-  # Colors (Gruvbox light)
-  gruvbox_light: &light
-    # Default colors
-    primary:
-      # hard contrast: background = '#f9f5d7'
-      background: '#fbf1c7'
-      # soft contrast: background = '#f2e5bc'
-      foreground: '#3c3836'
-
-    # Cursor colors
-    cursor:
-      text: CellBackground
-      cursor: CellForeground
-
-    # Normal colors
-    normal:
-      black:   '#fbf1c7'
-      red:     '#cc241d'
-      green:   '#98971a'
-      yellow:  '#d79921'
-      blue:    '#458588'
-      magenta: '#b16286'
-      cyan:    '#689d6a'
-      white:   '#7c6f64'
-
-    # Bright colors
-    bright:
-      black:   '#928374'
-      red:     '#9d0006'
-      green:   '#79740e'
-      yellow:  '#b57614'
-      blue:    '#076678'
-      magenta: '#8f3f71'
-      cyan:    '#427b58'
-      white:   '#3c3836'
-
-colors: *dark
+draw_bold_text_with_bright_colors: false
 
 # Bell
 #
@@ -255,7 +182,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
+background_opacity: 1
 
 selection:
   # This string contains all characters that are used as separators for

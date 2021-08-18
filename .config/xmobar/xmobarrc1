@@ -1,4 +1,4 @@
-Config {  font = "xft:monospace:size=10:bold:antialias=true"
+Config {  font = "xft:Ubuntu Mono:size=12:antialias=true"
         , additionalFonts = [ "xft:Siji:pixelsize=12" ]
         , bgColor = "black"
         , fgColor = "grey"

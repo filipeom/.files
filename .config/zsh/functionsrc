@@ -60,3 +60,11 @@ n () {
     rm -f "$NNN_TMPFILE" > /dev/null
   fi
 }
+
+to_mkv() {
+  name=$1
+  ffmpeg \
+    -i "$name.mp4" \
+    -i "$name.srt" \
+    -c:v copy -c:a copy -c:s copy -map 0:0 -map 0:1 -map 1:0 -y "$name.mkv"
+}
