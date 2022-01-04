@@ -33,6 +33,7 @@ export TEXMFVAR=$XDG_CACHE_HOME/texlive/texmf-var
 export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 
 # Misc
+export GRB_LICENSE_FILE=/usr/share/doc/gurobi/gurobi.lic
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export VAGRANT_HOME="/data/home/filipe/.vagrant.d"
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority

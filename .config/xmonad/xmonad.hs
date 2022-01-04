@@ -35,7 +35,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 1
+myBorderWidth   = 2
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -59,7 +59,7 @@ myWorkspaces     = map show [1..9]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#444444"
-myFocusedBorderColor = "#ffffff"
+myFocusedBorderColor = "#c4a7e7"
 
 -- dmenu command
 --
@@ -224,8 +224,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 --
 myLayout =   avoidStruts 
            $ toggleLayouts (noBorders Full) 
-           $ smartBorders
-           -- $ spacingRaw False (Border 5 25 30 30) True (Border 5 5 10 10) True
+--         $ smartBorders
+           $ spacingRaw False (Border 5 25 30 30) True (Border 5 5 10 10) True
            (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -296,7 +296,7 @@ myLogHook h = dynamicLogWithPP $ def
 --
 -- By default, do nothing.
 myStartupHook = do
-  spawnOnce "trayer --edge top --align right --widthtype percent --width 4 --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x000000 --height 22 &"
+  spawnOnce "trayer --edge top --align right --widthtype percent --width 4 --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x232136 --height 22 &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -329,13 +329,13 @@ main =  do
     handleEventHook    = myEventHook,
     logHook            = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
     { ppOutput = \x -> hPutStrLn h x >> hPutStrLn h' x
-      , ppCurrent = xmobarColor "yellow" ""  . wrap "[" "]"
-      , ppVisible = xmobarColor "#dfdfdf" "" . wrap "" "+"
-      , ppHidden  = xmobarColor "#dfdfdf" ""
-      , ppHiddenNoWindows = xmobarColor "#555" ""
+      , ppCurrent = xmobarColor "#e0def4" ""  . wrap "<box type=Bottom width=2 mb=0 color=#f6c177>" "</box>"
+      , ppVisible = xmobarColor "#e0def4" "" . wrap "<box type=Top width=2 mt=0>" "</box>"
+      , ppHidden  = xmobarColor "#e0def4" ""
+      , ppHiddenNoWindows = xmobarColor "#888" ""
       , ppUrgent  = xmobarColor "red" "" . wrap "" "!"
-      , ppTitle   = xmobarColor "cyan" "" . shorten 25
-      , ppSep     = " : "
+      , ppTitle   = xmobarColor "#a6dae3" "" . shorten 25
+      , ppSep     = " <fc=#888>|</fc> "
       , ppOrder   = \(ws:l:t:ex) -> [ws] ++ ex ++ [t]
     },
     startupHook        = myStartupHook

@@ -20,7 +20,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin(stdpath('data') . '/plugged' )
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
@@ -37,25 +37,41 @@ Plug 'mlr-msft/vim-loves-dafny', {'for': 'dafny'}
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'sheerun/vim-polyglot'
+"Plug 'numirias/semshi'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'ryanoasis/vim-devicons' Icons without colours
+"Plug 'akinsho/bufferline.nvim'
+Plug 'romgrk/barbar.nvim'
+" requires
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'anufrievroman/vim-angry-reviewer'
+Plug 'lilydjwg/colorizer'
 call plug#end()
 
 "========================================
-" 2. Nerd Tree
+" 2. Tree
 "========================================
-let g:NERDTreeWinPos="right"
-let NERDTreeShowHidden=0
-let NERDTreeIgnore=['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=30
+"let g:NERDTreeWinPos="right"
+"let NERDTreeShowHidden=0
+"let NERDTreeIgnore=['\.pyc$', '__pycache__']
+"let g:NERDTreeWinSize=30
+"
+"nmap <leader>nn :NERDTreeToggle<CR>
 
-nmap <leader>nn :NERDTreeToggle<CR>
+nmap <leader>nn :NvimTreeToggle<CR>
 
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd BufEnter * if (winnr("$") == 1 && bufwinnr("NvimTree") != -1) | q | endif
 
 "========================================
 " 3. Vimtex
 "========================================
 let g:tex_flavor = 'latex'
-let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_view_general_viewer = 'evince'
 let g:vimtex_compiler_method = 'latexmk'
 "    \ 'build_dir' : 'build',
 let g:vimtex_compiler_latexmk = {
@@ -156,15 +172,93 @@ let g:gruvbox_contrast_light = 'hard'
 function FlipBackground()
   if (&background == "dark")
     set background=light
+    colorscheme dawnfox
   else
     set background=dark
+    colorscheme duskfox
   endif
 endfunction
 
 map <leader>f :call FlipBackground()<CR>
 
-set background=light
+set termguicolors
+set background=dark
 
-colorscheme solarized
+colorscheme duskfox
 
 "hi Normal guibg=NONE ctermbg=NONE
+
+"========================================
+" 10. Angry Reviewer
+"========================================
+
+let g:AngryReviewerEnglish = 'british'
+nnoremap <leader>ar :AngryReviewer<cr>
+
+"========================================
+" 11. lua configuration
+"========================================
+
+lua << END
+require'lualine'.setup {
+    options = {theme = 'nightfox'}
+}
+require'nvim-tree'.setup {
+  disable_netrw       = true,
+  hijack_netrw        = true,
+  open_on_setup       = false,
+  ignore_ft_on_setup  = {},
+  auto_close          = true,
+  open_on_tab         = false,
+  hijack_cursor       = false,
+  update_cwd          = false,
+  update_to_buf_dir   = {
+    enable = true,
+    auto_open = true,
+  },
+  diagnostics = {
+    enable = false,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
+  },
+  update_focused_file = {
+    enable      = false,
+    update_cwd  = false,
+    ignore_list = {}
+  },
+  system_open = {
+    cmd  = nil,
+    args = {}
+  },
+  filters = {
+    dotfiles = true,
+    custom = {}
+  },
+  git = {
+    enable = true,
+    ignore = true,
+    timeout = 500,
+  },
+  view = {
+    width = 30,
+    height = 30,
+    hide_root_folder = false,
+    side = 'left',
+    auto_resize = false,
+    mappings = {
+      custom_only = false,
+      list = {}
+    },
+    number = false,
+    relativenumber = false
+  },
+  trash = {
+    cmd = "trash",
+    require_confirm = true
+  }
+}
+END

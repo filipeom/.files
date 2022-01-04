@@ -6,13 +6,13 @@
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
 import:
-  - /home/filipe/.config/alacritty/solarized.yml
+  - /home/filipe/.config/alacritty/nightfox_alacritty.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 env:
-  TERM: xterm-256color
+  TERM: alacritty
   WINIT_X11_SCALE_FACTOR: "1"
 
 window:
@@ -38,11 +38,11 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 5
+    y: 5
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: true
+  dynamic_padding: false
 
   # Window decorations
   #
@@ -53,7 +53,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  #decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -95,28 +95,28 @@ scrolling:
 
 # Font configuration
 font:
-  size: 12
 
-  # Normal (roman) font face
   normal:
-    family: Ubuntu Mono
-    style: Regular
+    family: UbuntuMono Nerd Font
+    style: Medium
 
   # Bold font face
   bold:
-    family: Ubuntu Mono
+    family: UbuntuMono Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    # Font family
-    family: Ubuntu Mono
+    family: UbuntuMono Nerd Font
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: Ubuntu Mono
+    family: UbuntuMono Nerd Font
     style: Bold Italic
+
+  # Point size
+  size: 12.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -133,7 +133,7 @@ font:
   #  y: 0
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Bell
 #
@@ -175,14 +175,14 @@ bell:
   #     args: ["Hello, World!"]
   #
   #command:
-  #program: canberra-gtk-play
+  #  program: canberra-gtk-play
   #  args: ["-i", "bell"]
 
 # Background opacity
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1
+background_opacity: 1.0
 
 selection:
   # This string contains all characters that are used as separators for
@@ -199,7 +199,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
 
   # Vi mode cursor style
   #

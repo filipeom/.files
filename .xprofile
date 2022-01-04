@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xwallpaper --daemon --zoom /usr/share/backgrounds/archlinux/small.png
+xwallpaper --daemon --zoom ~/.config/wallpaper.png
 #dwmstatus &
 xcompmgr > /dev/null 2>&1 &
 dunst &

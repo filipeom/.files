@@ -28,7 +28,7 @@ let mapleader=","
 " 2. User Interface
 "========================================
 " Always show current position
-set ruler
+"set ruler
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -61,6 +61,8 @@ set lcs=tab:>·,trail:·,nbsp:+,eol:¬
 
 " Cursor Shape
 set guicursor=
+
+set cursorline
 
 "========================================
 " 3. Colors and Fonts
@@ -103,21 +105,23 @@ set wrap
 set showmode
 
 " Always show statusline
-set laststatus=2
-
-" Set statusline
-set statusline=
-" Color
-set statusline+=%#StatusLineNC# 
-" Right
-set statusline+=\ %t%m
-set statusline+=%=
-" Left
-set statusline+=%y\ %{&fileencoding?&fileencoding:&encoding}\ [%{&fileformat}]\ %p%%\ %l:%-3c
+"set laststatus=2
+"
+"" Set statusline
+"set statusline=
+"" Color
+"set statusline+=%#StatusLineNC# 
+"" Right
+"set statusline+=\ %t%m
+"set statusline+=%=
+"" Left
+"set statusline+=%y\ %{&fileencoding?&fileencoding:&encoding}\ [%{&fileformat}]\ %p%%\ %l:%-3c
 
 "========================================
 " 6. Misc
 "========================================
+set mouse=a
+
 set modeline
 
 set number
@@ -158,12 +162,16 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Useful mappings for managing buffers
+map J : BufferPrevious<CR>
+map K : BufferNext<CR>
+map <leader>bc : BufferClose<CR>
+
 " Useful mappings for managing tabs
-map J : tabp<CR>
-map K : tabn<CR>
 map <leader>tn : tabnew<CR>
+map <leader>tj : tabprevious<CR>
+map <leader>tk : tabNext<CR>
 map <leader>to : tabonly<CR>
-map <leader>tc : tabclose<CR>
 map <leader>t  :tabnext
 
 " Let 'tl' toggle between this and the last access tab
