@@ -64,6 +64,8 @@ set guicursor=
 
 set cursorline
 
+set colorcolumn=81
+
 "========================================
 " 3. Colors and Fonts
 "========================================

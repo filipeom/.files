@@ -38,7 +38,7 @@ Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'sheerun/vim-polyglot'
-"Plug 'numirias/semshi'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'bfrg/vim-cpp-modern'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'kyazdani42/nvim-web-devicons'

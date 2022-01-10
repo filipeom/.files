@@ -225,7 +225,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout =   avoidStruts 
            $ toggleLayouts (noBorders Full) 
 --         $ smartBorders
-           $ spacingRaw False (Border 5 25 30 30) True (Border 5 5 10 10) True
+           $ spacingRaw False (Border 5 25 30 30) True (Border 5 5 5 5) True
            (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes

@@ -3,7 +3,7 @@ configuration {
 	width: 41;
 	lines: 17;
 	columns: 1;
-	font: "Anonymous Pro Minus 11";
+	font: "UbuntuMono Nerd Font 12.5";
 /*	bw: 1;*/
 /*	location: 0;*/
 /*	padding: 5;*/
@@ -50,7 +50,7 @@ configuration {
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-  theme: "glue_pro_blue_remix";
+/*  theme: "glue_pro_blue_remix"; */
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/
@@ -138,4 +138,5 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 
+@theme "glue_pro_blue_remix"
 /* vim: set ft=css : */
