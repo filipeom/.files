@@ -57,7 +57,7 @@ set scrolloff=10
 set lcs=tab:>·,trail:·,nbsp:+,eol:¬
 
 " See line breaks and carriage
-"set list
+set list
 
 " Cursor Shape
 set guicursor=

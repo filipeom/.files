@@ -2,8 +2,8 @@
 
 Config {  font = "xft:UbuntuMono Nerd Font:size=12:antialias=true"
         , additionalFonts = [ "xft:Siji:pixelsize=12" 
-                            , "xft:Font Awesome 5 Free Solid:pixelsize=14"
-                            , "xft:Font Awesome 5 Brands:pixelsize=18"
+                            , "xft:Font Awesome 6 Free Solid:pixelsize=14"
+                            , "xft:Font Awesome 6 Brands:pixelsize=18"
                             ]
         , bgColor = "#232136"
         , fgColor = "#e0def4"

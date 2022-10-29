@@ -1,4 +1,5 @@
 import XMonad
+
 import Data.Monoid
 import System.Exit
 
@@ -265,16 +266,6 @@ myManageHook = composeAll
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
-------------------------------------------------------------------------
--- Event handling
-
--- * EwmhDesktops users should change this to ewmhDesktopsEventHook
---
--- Defines a custom handler function for X Events. The function should
--- return (All True) if the default handler is to be run afterwards. To
--- combine event hooks use mappend or mconcat from Data.Monoid.
---
-myEventHook = H.fullscreenEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -303,11 +294,12 @@ myStartupHook = do
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main =  do
+main = do
   h  <- spawnPipe "xmobar -x 0 /home/filipe/.config/xmobar/xmobarrc0"
   h' <- spawnPipe "xmobar -x 1 /home/filipe/.config/xmobar/xmobarrc1"
-  xmonad 
+  xmonad
     $ docks 
+    $ ewmhFullscreen . ewmh
     $ fullscreenSupport
     $ def {
     -- simple stuff
@@ -326,7 +318,6 @@ main =  do
     -- hooks, layouts
     layoutHook         = myLayout,
     manageHook         = myManageHook <+> manageDocks <+> fullscreenManageHook,
-    handleEventHook    = myEventHook,
     logHook            = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP 
     { ppOutput = \x -> hPutStrLn h x >> hPutStrLn h' x
       , ppCurrent = xmobarColor "#e0def4" ""  . wrap "<box type=Bottom width=2 mb=0 color=#f6c177>" "</box>"
