@@ -21,6 +21,8 @@ filetype plugin indent on
 set autoread
 autocmd FocusGained,BufEnter * checktime
 
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Leader
 let mapleader=","
 
@@ -147,6 +149,7 @@ map <leader>r  :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " Break lines in command mode
 map <C-i> i<CR><Esc>
+set rtp^="$OPAMROOT/4.14.0/share/ocp-indent/vim"
 
 "========================================
 " 7. Navigation

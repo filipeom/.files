@@ -65,6 +65,7 @@ to_mkv() {
   name=$1
   ffmpeg \
     -i "$name.mp4" \
+    -sub_charenc ISO-8859-1 \
     -i "$name.srt" \
     -c:v copy -c:a aac -ac 2 -c:s copy -map 0:0 -map 0:1 -map 1:0 -y "$name.mkv"
 }
