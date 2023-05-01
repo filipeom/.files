@@ -5,7 +5,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="fsimple"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -39,7 +39,7 @@ export UPDATE_ZSH_DAYS=7
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -77,12 +77,8 @@ source $ZSH/oh-my-zsh.sh
 
 # opam configuration
 eval $(opam env)
-# configure lib path
-export LD_LIBRARY_PATH="${OPAMROOT:-$HOME/.opam}/4.08.1/lib/z3/:${LD_LIBRARY_PATH}"
-export PATH="${HOME}/documents/uni/5year/1sem/qs/dafny-base/:${PATH}"
 
 # Aliases and functions
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
 [ -f "${ZDOTDIR}/functionsrc" ] && source "${ZDOTDIR}/functionsrc"
 
-powerline-daemon -q

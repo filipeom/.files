@@ -6,7 +6,7 @@
 # loaded earlier with those loaded later in the chain. The file itself will
 # always be loaded last.
 import:
-  - /home/filipe/.config/alacritty/colorschemes/gruvbox.yml
+  - /home/filipe/.config/alacritty/colorschemes/dayfox.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -103,26 +103,26 @@ scrolling:
 font:
 
   normal:
-    family: UbuntuMono Nerd Font
-    style: Medium
+    family: Caskaydia Cove Nerd Font
+    style: Regular
 
   # Bold font face
-  bold:
-    family: UbuntuMono Nerd Font
-    style: Bold
+  #bold:
+  #  family: BlexMono Nerd Font
+  #  style: Bold
 
   # Italic font face
-  italic:
-    family: UbuntuMono Nerd Font
-    style: Italic
+  #italic:
+  #  family: BlexMono Nerd Font
+  #  style: Italic
 
   # Bold italic font face
-  bold_italic:
-    family: UbuntuMono Nerd Font
-    style: Bold Italic
+  #bold_italic:
+  #  family: BlexMono Nerd Font
+  #  style: Bold Italic
 
   # Point size
-  size: 13.5
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

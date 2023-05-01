@@ -3,7 +3,7 @@ export PATH="$HOME"/.local/bin:"$PATH"
 
 # User
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="kitty"
 export FILE="ranger"
 export BROWSER="firefox"
 export DEFAULT_USER="filipe"
@@ -12,7 +12,7 @@ export DEFAULT_USER="filipe"
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_DATA_HOME="$HOME"/.local/share
-export XDG_PICTURES_DIR="/data/home/filipe/Pictures"
+export XDG_PICTURES_DIR="$HOME"/pic
 
 # ZSH
 export ZSH="$XDG_DATA_HOME"/zsh/oh-my-zsh
@@ -36,8 +36,12 @@ export TEXMFCONFIG=$XDG_CONFIG_HOME/texlive/texmf-config
 export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
 export CABAL_DIR="$XDG_CACHE_HOME"/cabal
 
+# Python
+export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME"/python
+export PYTHONUSERBASE="$XDG_DATA_HOME"/python
 
 # Misc
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export GRB_LICENSE_FILE=/usr/share/doc/gurobi/gurobi.lic
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export VAGRANT_HOME="/data/home/filipe/.vagrant.d"
@@ -57,5 +61,6 @@ export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 export OPAMROOT="$XDG_DATA_HOME"/opam
 export SSB_HOME="$XDG_DATA_HOME"/zoom 
 export SQLITE_HISTORY="$XDG_DATA_HOME"/sqlite_history
+export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx

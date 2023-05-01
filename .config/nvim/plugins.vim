@@ -1,16 +1,5 @@
-" Config index:
-"   1. Plugin manager configuration
-"   2. Nerd Tree
-"   3. Vimtex
-"   4. Goyo
-"   5. Vimwiki
-"   6. Ale
-"   7. Ctrl-P
-"   8. lightline
-"   9. Colorscheme
-"
 "========================================
-" 1. Plugin manager configuration
+" Plugin manager configuration
 "========================================
 " Install plugin manager
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -21,14 +10,10 @@ endif
 
 call plug#begin(stdpath('data') . '/plugged' )
 Plug 'lervag/vimtex'
-Plug 'junegunn/goyo.vim'
-Plug 'vimwiki/vimwiki'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'kovetskiy/sxhkd-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'whonore/Coqtail'
 Plug 'let-def/vimbufsync'
@@ -37,14 +22,12 @@ Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+" Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 Plug 'bfrg/vim-cpp-modern'
 Plug 'EdenEast/nightfox.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'ryanoasis/vim-devicons' Icons without colours
 "Plug 'akinsho/bufferline.nvim'
 Plug 'romgrk/barbar.nvim'
-" requires
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -53,28 +36,20 @@ Plug 'lilydjwg/colorizer'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'neovim/nvim-lspconfig'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "========================================
-" 2. Tree
+" Nvim-tree
 "========================================
-"let g:NERDTreeWinPos="right"
-"let NERDTreeShowHidden=0
-"let NERDTreeIgnore=['\.pyc$', '__pycache__']
-"let g:NERDTreeWinSize=30
-"
-"nmap <leader>nn :NERDTreeToggle<CR>
 
 nmap <leader>nn :NvimTreeToggle<CR>
 
-"autocmd BufEnter * if (winnr("$") == 1 && bufwinnr("NvimTree") != -1) | q | endif
-
 "========================================
-" 3. Vimtex
+" Vimtex
 "========================================
 let g:tex_flavor = 'latex'
-"let g:vimtex_view_general_viewer = 'evince-previewer'
-let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_general_viewer = 'evince'
 let g:vimtex_compiler_method = 'latexmk'
 "    \ 'build_dir' : 'build',
 let g:vimtex_compiler_latexmk = {
@@ -90,21 +65,7 @@ let g:vimtex_compiler_latexmk = {
 let maplocalleader = ","
 
 "========================================
-" 4. Goyo
-"========================================
-let g:goyo_width=100
-let g:goyo_margin_top=5
-let g:goyo_margin_bottom=5
-nnoremap <silent> <leader>z :Goyo<CR>
-
-"========================================
-" 5. Vimwiki
-"========================================
-let g:vimwiki_list = [{'path': '~/documents/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-"========================================
-" 6. Ale
+" Ale
 "========================================
 let g:ale_completion_enabled = 1
 let g:ale_echo_msg_error_str = 'Err'
@@ -112,7 +73,7 @@ let g:ale_echo_msg_warning_str = 'Wrn'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]' 
 
 "========================================
-" 7. Ctrl-P
+" Ctrl-P
 "========================================
 " This is the default option:
 "   - Preview window on the right with 50% width
@@ -128,8 +89,8 @@ let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
 " Empty value to disable preview window altogether
 let g:fzf_preview_window = []
 
-map <leader>j :Files<CR>
-map <leader>s :Rg<CR>
+map <leader>jj :Files<CR>
+map <leader>js :Rg<CR>
 
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
@@ -140,7 +101,7 @@ command! -bang -nargs=* Rg
   \   fzf#vim#with_preview(), <bang>0)
 
 "========================================
-" 8. lightline
+" Lightline
 "========================================
 "let g:lightline = {
 "  \ 'colorscheme' : 'powerline',
@@ -165,10 +126,10 @@ command! -bang -nargs=* Rg
 "  \ }
 
 "========================================
-" 9. colorscheme
+" Colorscheme
 "========================================
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_contrast_dark = 'light'
+let g:gruvbox_contrast_light = 'light'
 
 "let g:solarized_termcolors=256
 
@@ -185,37 +146,35 @@ let g:gruvbox_contrast_light = 'hard'
 "map <leader>f :call FlipBackground()<CR>
 
 set termguicolors
-set background=dark
+set background=light
 
-colorscheme gruvbox
+colorscheme dayfox
 
 " hi Normal guibg=NONE ctermbg=NONE
 
 "========================================
-" 10. Angry Reviewer
+" Angry Reviewer
 "========================================
 
 let g:AngryReviewerEnglish = 'british'
 nnoremap <leader>ar :AngryReviewer<cr>
 
 "========================================
-" XXX. pandoc
+" Vimwiki
 "========================================
 
-let g:pandoc#syntax#codeblocks#embeds#use = 1
-let g:pandoc#syntax#codeblocks#embeds#langs = ['c', 'sh']
+let g:vimwiki_list = [{'path': '~/doc/wiki',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
-augroup pandoc_syntax
-  autocmd! FileType vimwiki set syntax=markdown.pandoc
-augroup END
+let g:vimwiki_global_ext = 0
 
 "========================================
-" 11. lua configuration
+" lua configuration
 "========================================
 
 lua << END
 require'lualine'.setup {
-    options = {theme = 'gruvbox'}
+    options = {theme = 'dayfox'}
 }
 
 require'nvim-tree'.setup {}
@@ -266,4 +225,11 @@ require('lspconfig')['ocamllsp'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+require('lspconfig')['texlab'].setup{
+  on_attach = on_attach,
+  flags = ls_flags,
+}
+require'lspconfig'.jdtls.setup{}
+require'lspconfig'.hls.setup{}
+
 END

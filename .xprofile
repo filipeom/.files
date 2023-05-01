@@ -1,15 +1,24 @@
 #!/bin/sh
 
-dwmstatus &
-xcompmgr > /dev/null 2>&1 &
-dunst &
+# XConfig
 xset r rate 300 50
-xwallpaper --daemon --zoom ~/.config/wallpaper.png
-unclutter --start-hidden --jitter 0 --timeout 5 -b
+xcompmgr > /dev/null 2>&1 &
+xwallpaper --daemon --zoom ~/.config/wallpaper.jpg
+redshift &
 #xautolock -time 10 \
 #  -notify 60 \
 #  -notifier 'dunstify "Xautolock" "Locking screen in 1m"' \
 #  -locker 'slock -m "$(cowsay "$(fortune)")"' &
+
+# System utilities
+dwmstatus &
+powerline-daemon -q
+dunst &
+safeeyes &
+#unclutter --start-hidden --jitter 0 --timeout 5 -b
+
+# Programs
 thunderbird &
 nm-applet &
-google-calendar &
+bluberry-tray
+#google-calendar &

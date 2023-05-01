@@ -35,6 +35,9 @@ let mapleader=","
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
+" Complete
+set completeopt=menuone,noinsert,noselect
+
 " Ignore case when searching
 set ignorecase
 
@@ -80,7 +83,7 @@ if !has('gui_running')
 endif
 
 " Set dark background
-set background=dark
+set background=light
 
 " Set utf-8 character encodings
 set encoding=utf-8
@@ -173,16 +176,16 @@ map K : BufferNext<CR>
 map <leader>bc : BufferClose<CR>
 
 " Useful mappings for managing tabs
-map <leader>tn : tabnew<CR>
-map <leader>tj : tabprevious<CR>
-map <leader>tk : tabNext<CR>
-map <leader>to : tabonly<CR>
-map <leader>t  :tabnext
+"map <leader>tn : tabnew<CR>
+"map <leader>tj : tabprevious<CR>
+"map <leader>tk : tabNext<CR>
+"map <leader>to : tabonly<CR>
+"map <leader>t  :tabnext
 
 " Let 'tl' toggle between this and the last access tab
-let g:lasttab=1
-nmap <leader>tl :exe "tabn ".g:lasttab<CR>
-autocmd TabLeave * let g:lasttab=tabpagenr()
+" let g:lasttab=1
+" nmap <leader>tl :exe "tabn ".g:lasttab<CR>
+" autocmd TabLeave * let g:lasttab=tabpagenr()
 
 " Return to last edit position when opening files
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g'\"" | endif

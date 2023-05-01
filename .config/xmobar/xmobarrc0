@@ -1,14 +1,13 @@
 -- vim:ft=haskell
 
-Config {  font = "xft:UbuntuMono Nerd Font:size=12:antialias=true"
-        , additionalFonts = [ "xft:Siji:pixelsize=12" 
-                            , "xft:Font Awesome 6 Free Solid:pixelsize=14"
-                            , "xft:Font Awesome 6 Brands:pixelsize=18"
+Config {  font = "CaskaydiaCove Nerd Font 10"
+        , additionalFonts = [ "Font Awesome 6 Free Solid 12"
+                            , "Font Awesome 6 Brands 14"
                             ]
-        , bgColor = "#232136"
-        , fgColor = "#e0def4"
-        -- , position = TopSize L 100 22
-        , position = TopSize L 96 22
+        , bgColor = "#f6f2ee"
+        , fgColor = "#3d2b5a"
+        -- , position = TopSize L 100 24
+        , position = TopSize L 94 24
         -- , border = BottomBM 3
         -- , borderColor = "#555555"
         , lowerOnStart = True
@@ -17,29 +16,29 @@ Config {  font = "xft:UbuntuMono Nerd Font:size=12:antialias=true"
         , persistent = True
         , alpha = 255
         , commands = [ 
-              Run Com "echo" ["<fc=#c4a7e7><fn=3>\xf17c</fn></fc>"] "penguin" 3600
+              Run Com "echo" ["<fc=#6e33ce><fn=3>\xf17c</fn></fc>"] "penguin" 3600
             -- Time and date
-            , Run Date "<fc=#f6c177><fn=2>\xf133</fn></fc> %a %d %b <fc=#f6c177><fn=2>\xf017</fn></fc> %H:%M:%S" "date" 50
+            , Run Date "<fc=#ac5402><fn=2>\xf133</fn></fc> %a %d %b <fc=#ac5402><fn=2>\xf017</fn></fc> %H:%M:%S" "date" 50
             -- Cpu usage in percent
-            , Run Cpu [ "-t", "<fc=#f6c177><fn=2>\xf109</fn></fc> <total>%"
+            , Run Cpu [ "-t", "<fc=#ac5402><fn=2>\xf109</fn></fc> <total>%"
                       , "-L", "3", "-H", "50"
                       , "--high", "red", "--normal", "green"
                       , "-p", "2" ] 10
             -- Ram used number and percent
-            , Run Memory ["-t", "<fc=#f6c177><fn=2>\xf2db</fn></fc> <usedratio>%"] 20
+            , Run Memory ["-t", "<fc=#ac5402><fn=2>\xf2db</fn></fc> <usedratio>%"] 20
             -- Battery
             , Run Battery [  "-t", "<acstatus>"
                            , "-L", "20", "-H", "80"
                            , "-l", "red","-h", "green"
-                           , "--", "-O", "<fc=#f6c177><fn=2>\xf1e6</fn></fc> +<left>%"
-                                 , "-i", "<fc=#f6c177><fn=2>\xf1e6</fn></fc> ?<left>% (<timeleft>)"
-                                 , "-o", "<fc=#f6c177><fn=2>\xf0e7</fn></fc> -<left>% (<timeleft>)"
+                           , "--", "-O", "<fc=#ac5402><fn=2>\xf1e6</fn></fc> +<left>%"
+                                 , "-i", "<fc=#ac5402><fn=2>\xf1e6</fn></fc> ?<left>% (<timeleft>)"
+                                 , "-o", "<fc=#ac5402><fn=2>\xf0e7</fn></fc> -<left>% (<timeleft>)"
                            ] 10
             -- Disk space free
             , Run DiskU [("/", "hdd: <free> free")] [] 60
             -- Runs a standard shell command 'uname -r' to get kernel version
             , Run Com "uname" ["-r"] "" 3600
-            , Run CoreTemp ["-t", "<fc=#f6c177><fn=2>\xf2c9</fn></fc> <core0>°C"
+            , Run CoreTemp ["-t", "<fc=#ac5402><fn=2>\xf2c9</fn></fc> <core0>°C"
                             , "-L", "40", "-H", "60"
                             , "-l", "cyan", "-n", "gray90", "-h", "red"] 50
             , Run Network "enp0s25" [ "-L", "0", "-H", "70", "--normal", "green", "--high", "red" ] 10
