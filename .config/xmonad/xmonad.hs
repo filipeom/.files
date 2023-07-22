@@ -143,6 +143,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
+    , ((modm              , xK_f     ),
+        sendMessage ToggleStruts >> sendMessage (Toggle "Full"))
+
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io exitSuccess)
 
@@ -221,6 +224,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList
 myLayout = 
     avoidStruts 
     $ toggleLayouts (noBorders Full)
+    $ smartBorders
     $ spacingRaw False (Border 5 5 10 10) True (Border 5 5 5 5) True
     (tiled ||| Mirror tiled ||| Full)
   where
@@ -254,6 +258,9 @@ myLayout =
 myManageHook = composeAll
     [ title     =? "SafeEyes-0"     --> doFloat
     , title     =? "SafeEyes-1"     --> doFloat
+    , className =? "Slack"          --> doShift (myWorkspaces !! 3)
+    , className =? "discord"        --> doShift (myWorkspaces !! 4)
+    , className =? "thunderbird"    --> doShift (myWorkspaces !! 8)
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
@@ -304,8 +311,8 @@ myLogHook h = dynamicLogWithPP $ def
 --
 myStartupHook =
     spawn ("pkill trayer; trayer --edge top --align right --widthtype percent"
-        ++ " --width 6 --padding 6 --SetDockType true --SetPartialStrut true"
-        ++ " --expand true --monitor primary --transparent true --alpha 0"
+        ++ " --width 8 --padding 6 --SetDockType true --SetPartialStrut true"
+        ++ " --expand false --monitor primary --transparent true --alpha 0"
         ++ " --height 24 --tint 0xf6f2ee &")
 
 ------------------------------------------------------------------------
@@ -314,11 +321,11 @@ myStartupHook =
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-    bar0 <- spawnPipe "xmobar -x 0 /home/filipe/.config/xmobar/xmobarrc0"
-    bar1 <- spawnPipe "xmobar -x 1 /home/filipe/.config/xmobar/xmobarrc1"
+    h <- spawnPipe "xmobar -x 0 /home/filipe/.config/xmobar/xmobarrc0"
     xmonad
         $ docks
         $ ewmhFullscreen . ewmh
+        $ fullscreenSupport
         $ def {
       -- simple stuff
         terminal           = myTerminal,
@@ -334,11 +341,11 @@ main = do
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = myLayout,
-        manageHook         = myManageHook <+> manageDocks,
-        handleEventHook    = myEventHook,
-        logHook            = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
-            { ppOutput = \x -> hPutStrLn bar0 x >> hPutStrLn bar1 x
+        layoutHook = myLayout,
+        manageHook = myManageHook <+> manageDocks <+> fullscreenManageHook,
+        handleEventHook = myEventHook,
+        logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
+            { ppOutput = hPutStrLn h
             , ppCurrent = xmobarColor "#352c24" "" 
                 . wrap "<box type=Bottom width=3 mb=0 color=#ac5402>" "</box>"
             , ppVisible = xmobarColor "#534c45" ""

@@ -7,7 +7,7 @@ option=$(printf "disk\nclipboard" | dmenu -l 2 -p "Save to:")
 canberra-gtk-play -i screen-capture
 if [ "$option" = "disk" ];then
   shotgun -f png $selection "$name"
-  mv "$name" "$XDG_PICTURES_DIR"
+  mv "$name" "$XDG_PICTURES_DIR/"
 else
   shotgun -f png $selection - | xclip -t 'image/png' -selection clipboard
 fi
