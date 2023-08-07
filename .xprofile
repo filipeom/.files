@@ -14,7 +14,7 @@ redshift &
 dwmstatus &
 powerline-daemon -q
 dunst &
-safeeyes &
+#safeeyes &
 #unclutter --start-hidden --jitter 0 --timeout 5 -b
 
 # Programs
