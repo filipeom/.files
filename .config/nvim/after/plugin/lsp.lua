@@ -12,5 +12,5 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, opts)
 end)
 
-lsp.setup_servers({ 'tsserver', 'eslint', 'ocamllsp' })
+lsp.setup_servers({ 'tsserver', 'eslint', 'ocamllsp', 'clangd', 'marksman' })
 lsp.setup()
