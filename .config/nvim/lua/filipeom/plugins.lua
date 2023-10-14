@@ -46,4 +46,5 @@ return require('packer').startup(function(use)
   use 'romgrk/barbar.nvim'
   use 'nvim-tree/nvim-web-devicons'
   use 'wasp-platform/ecmasl-vim'
+  use 'lervag/vimtex'
 end)
