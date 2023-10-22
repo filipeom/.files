@@ -17,8 +17,7 @@ dunst &
 #safeeyes &
 #unclutter --start-hidden --jitter 0 --timeout 5 -b
 
-# Programs
+# Startup programs
 thunderbird &
 nm-applet &
 bluberry-tray
-#google-calendar &

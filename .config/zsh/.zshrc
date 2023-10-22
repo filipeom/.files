@@ -70,7 +70,7 @@ plugins=(git encode64 extract archlinux zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 #========================================
-#=> zsh user configuration 
+#=> zsh user configuration
 #========================================
 # Include hidden files in autocomplete
 #_comp_options+=(globdots)
