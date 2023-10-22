@@ -14,6 +14,4 @@ vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- dune
-vim.keymap.set('n', '<leader>db', ':!dune build @install<CR>')
-vim.keymap.set('n', '<leader>di', ':!dune install<CR>')
-vim.keymap.set('n', '<leader>dc', ':!dune clean<CR>')
+vim.keymap.set('n', '<leader>m', ':make<CR>')

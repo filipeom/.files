@@ -22,5 +22,6 @@ lsp.setup_servers(
   , 'bashls'
   , 'pyright'
   , 'texlab'
+  , 'lua_ls'
 })
 lsp.setup()
