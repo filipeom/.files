@@ -1,6 +1,6 @@
 #!/bin/sh
 
-emount() {
+mount_chipered() {
   local DEV="$1"
   local MOUNT_DEV="ciphered_dev"
 
@@ -20,7 +20,7 @@ emount() {
   printf "Goto mounted dir with: cd /media/filipe/$MOUNT_DEV\n"
 }
 
-eumount() {
+unmount_ciphered() {
   local DEV="$1"
 
   if [ -z $DEV ] || [ ! -e "/media/filipe/$DEV" ]; then

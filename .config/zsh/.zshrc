@@ -72,6 +72,15 @@ source $ZSH/oh-my-zsh.sh
 #========================================
 #=> zsh user configuration
 #========================================
+
+HISTSIZE=500000
+
+SAVEHIST=500000
+
+setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # Include hidden files in autocomplete
 #_comp_options+=(globdots)
 
@@ -82,3 +91,7 @@ eval $(opam env)
 [ -f "${ZDOTDIR}/aliasrc" ] && source "${ZDOTDIR}/aliasrc"
 [ -f "${ZDOTDIR}/functionsrc" ] && source "${ZDOTDIR}/functionsrc"
 
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$(npm config get prefix)/bin":$PATH
