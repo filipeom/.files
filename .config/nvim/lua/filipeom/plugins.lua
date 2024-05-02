@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
   }
   use 'EdenEast/nightfox.nvim' -- Packer
   use 'rose-pine/neovim'
+  use 'maxmx03/solarized.nvim'
   use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
   use 'nvim-treesitter/playground'
   use 'mbbill/undotree'
@@ -48,24 +49,5 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'wasp-platform/ecmasl-vim'
   use 'lervag/vimtex'
-  use {
-    "nvim-neorg/neorg",
-    config = function()
-      require('neorg').setup {
-        load = {
-          ["core.defaults"] = {},        -- Loads default behaviour
-          ["core.concealer"] = {},       -- Adds pretty icons to your documents
-          ["core.dirman"] = {            -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/doc/notes",
-              },
-            },
-          },
-        },
-      }
-    end,
-    run = ":Neorg sync-parsers",
-    requires = "nvim-lua/plenary.nvim",
-  }
+  use 'github/copilot.vim'
 end)
