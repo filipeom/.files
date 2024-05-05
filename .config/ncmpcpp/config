@@ -3,7 +3,7 @@
 ## $XDG_CONFIG_HOME/ncmpcpp/config or $HOME/.ncmpcpp/config ##
 ## and set up your preferences.                             ##
 ##############################################################
-#
+
 ##### directories ######
 ##
 ## Directory for storing ncmpcpp related files.  Changing it is useful if you
@@ -11,28 +11,28 @@
 ## alternative location to config file which defines that while launching
 ## ncmpcpp.
 ##
-#
-#ncmpcpp_directory = ~/.config/ncmpcpp
-#
+
+ncmpcpp_directory = ~/.config/ncmpcpp
+
 ##
 ## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
 ## MPD clients (eg. ncmpc) also use that location.
 ##
-#
-#lyrics_directory = ~/.lyrics
-#
+
+lyrics_directory = ~/.lyrics
+
 ##### connection settings #####
-#
-#mpd_host = localhost
-#
-#mpd_port = 6600
-#
-#mpd_connection_timeout = 5
-#
+
+mpd_host = localhost
+
+mpd_port = 6600
+
+mpd_connection_timeout = 5
+
 ## Needed for tag editor and file operations to work.
 ##
-#mpd_music_dir = ~/music
-#
+mpd_music_dir = ~/music
+
 #mpd_crossfade_time = 5
 #
 # Exclude pattern for random song action
@@ -240,19 +240,19 @@
 #alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 #
 #alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-#
-#current_item_prefix = $(yellow)$r
-#
-#current_item_suffix = $/r$(end)
-#
-#current_item_inactive_column_prefix = $(white)$r
-#
-#current_item_inactive_column_suffix = $/r$(end)
-#
-#now_playing_prefix = $b
-#
-#now_playing_suffix = $/b
-#
+
+current_item_prefix = $(yellow)$r
+
+current_item_suffix = $/r$(end)
+
+current_item_inactive_column_prefix = $(white)$r
+
+current_item_inactive_column_suffix = $/r$(end)
+
+now_playing_prefix = $b
+
+now_playing_suffix = $/b
+
 #browser_playlist_prefix = "$2playlist$9 "
 #
 #selected_item_prefix = $6
@@ -311,7 +311,7 @@
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[black]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -340,15 +340,15 @@ execute_on_song_change = ncmpcpp_notify.sh
 ##
 ## Note: Possible display modes: classic, columns.
 ##
-#playlist_display_mode = columns
-#
-#browser_display_mode = classic
-#
-#search_engine_display_mode = classic
-#
-#playlist_editor_display_mode = classic
-#
-#discard_colors_if_item_is_selected = yes
+playlist_display_mode = columns
+
+browser_display_mode = classic
+
+search_engine_display_mode = classic
+
+playlist_editor_display_mode = classic
+
+discard_colors_if_item_is_selected = no
 #
 #show_duplicate_tags = yes
 #
@@ -374,7 +374,7 @@ execute_on_song_change = ncmpcpp_notify.sh
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
+user_interface = alternative
 #
 #data_fetching_delay = yes
 #
@@ -397,8 +397,8 @@ execute_on_song_change = ncmpcpp_notify.sh
 #statusbar_visibility = yes
 #
 ## Show the "Connected to ..." message on startup
-#connected_message_on_startup = yes
-#
+connected_message_on_startup = yes
+
 #titles_visibility = yes
 #
 #header_text_scrolling = yes
