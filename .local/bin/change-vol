@@ -9,7 +9,7 @@ volume="$($mixer --get-volume | awk '{print $1}' | sed 's/[^0-9]*//g')"
 mute="$($mixer --get-mute  | sed 's/[^0-9]*//g')"
 if [[ $volume == 0 || $mute == 1  ]]; then
   dunstify -a "change-vol" -u normal -i audio-volume-muted -r "$msgId" \
-              "Volume muted" 
+              "Volume muted"
 else
   dunstify -a "change-vol" -u normal -i audio-volume-high -r "$msgId" \
               "Volume: ${volume}%" "[$(progstr 20 "#" "-" $volume)]"
