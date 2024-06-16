@@ -1,6 +1,6 @@
 local lsp = require('lsp-zero').preset({})
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
   -- lsp.default_keymaps(opts)
   vim.keymap.set('n', 'T', function() vim.lsp.buf.hover() end, opts)

@@ -7,8 +7,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    -- or                            , branch = '0.1.x',
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'EdenEast/nightfox.nvim' -- Packer
@@ -49,5 +48,4 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'wasp-platform/ecmasl-vim'
   use 'lervag/vimtex'
-  use 'github/copilot.vim'
 end)

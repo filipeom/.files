@@ -1,6 +1,6 @@
 vim.keymap.set('n', '<leader>nn', vim.cmd.Ex)
-vim.keymap.set('n', '<leader>w', ':w!<CR>')
-vim.keymap.set('n', '<leader>q', ':q!<CR>')
+-- vim.keymap.set('n', '<leader>w', ':w!<CR>')
+-- vim.keymap.set('n', '<leader>q', ':q!<CR>')
 
 -- ctrl-v
 vim.keymap.set('n', '<leader>y', '\"+y')

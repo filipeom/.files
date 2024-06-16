@@ -1,4 +1,4 @@
-function set_colorscheme(color)
+local function set_colorscheme(color)
 	color = color or 'dayfox'
 	vim.cmd.colorscheme(color)
 
