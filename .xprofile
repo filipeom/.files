@@ -3,7 +3,7 @@
 # XConfig
 xset r rate 300 50
 xcompmgr > /dev/null 2>&1 &
-xwallpaper --daemon --zoom ~/.config/wallpaper.jpg
+xwallpaper --daemon --zoom ~/.config/wallpaper.jpg &
 #xautolock -time 10 \
 #  -notify 60 \
 #  -notifier 'dunstify "Xautolock" "Locking screen in 1m"' \
@@ -11,7 +11,7 @@ xwallpaper --daemon --zoom ~/.config/wallpaper.jpg
 
 # System utilities
 redshift &
-dwmstatus &
+dwmstatus > ~/.local/share/dwmstatus/log.stdout 2> ~/.local/share/dwmstatus/log.stderr &
 powerline-daemon -q
 dunst &
 mpd
