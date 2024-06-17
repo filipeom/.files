@@ -10,15 +10,15 @@ xwallpaper --daemon --zoom ~/.config/wallpaper.jpg &
 #  -locker 'slock -m "$(cowsay "$(fortune)")"' &
 
 # System utilities
-redshift &
-dwmstatus > ~/.local/share/dwmstatus/log.stdout 2> ~/.local/share/dwmstatus/log.stderr &
-powerline-daemon -q
-dunst &
-mpd
+# redshift &
+# dwmstatus > ~/.local/share/dwmstatus/log.stdout 2> ~/.local/share/dwmstatus/log.stderr &
+# powerline-daemon -q
+# dunst &
+# mpd
 #safeeyes &
 #unclutter --start-hidden --jitter 0 --timeout 5 -b
 
 # Startup programs
-thunderbird &
+#thunderbird &
 nm-applet &
-bluberry-tray
+#bluberry-tray
