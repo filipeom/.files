@@ -15,5 +15,5 @@ autocmd({ "BufWritePre" }, {
 -- Invoke dune on 'ocaml' filetypes
 autocmd("Filetype", {
   pattern = { "ocaml", "dune" },
-  command = [[ setlocal makeprg=dune\ build\ @all ]]
+  command = [[ setlocal makeprg=dune\ build\ @install ]]
 })
