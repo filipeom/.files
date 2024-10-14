@@ -21,6 +21,7 @@ mpd
 #unclutter --start-hidden --jitter 0 --timeout 5 -b
 
 # Startup programs
+nextcloud &
 thunderbird &
 nm-applet &
 bluberry-tray
