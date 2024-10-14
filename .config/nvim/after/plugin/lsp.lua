@@ -14,7 +14,7 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 lsp.setup_servers(
-  { 'tsserver'
+  { 'ts_ls'
   , 'eslint'
   , 'ocamllsp'
   , 'clangd'
