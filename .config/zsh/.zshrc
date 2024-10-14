@@ -112,7 +112,11 @@ source "${ZDOTDIR}/functions.zsh"
 # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Node to PATH
 export PATH="$(npm config get prefix)/bin":$PATH
+
+# Cargo to PATH
+export PATH="$CARGO_HOME"/bin:$PATH
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
