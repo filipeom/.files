@@ -1,0 +1,5 @@
+# Dotfiles
+.files
+
+# Direnv stuff
+.direnv/

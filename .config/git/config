@@ -1,0 +1,5 @@
+[user]
+	email = filipe.s.marques@tecnico.ulisboa.pt
+	name = Filipe Marques
+[credential]
+	helper = store
