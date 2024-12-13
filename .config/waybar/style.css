@@ -1,0 +1,56 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 16px;
+}
+
+window#waybar {
+  background: white;
+  color: black;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: black;
+}
+
+#workspaces button.active {
+    color: #8452d5;
+    font-weight: bold;
+    /* border-bottom: 2px solid black; */
+}
+
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+
+/* #workspaces button:hover { */
+/* 	background: #1a1a1a; */
+/* 	border: #1a1a1a; */
+/* 	padding: 0 5px; */
+/* } */
+
+#pulseaudio, #temperature, #memory, #battery, #tray, #clock {
+  /* padding: 0 5px; */
+  margin: 0 5px;
+}
+
+#battery {
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #000000;
+        color: white;
+    }
+}
