@@ -6,6 +6,18 @@ autocmd("BufWinEnter", {
   command = 'silent! normal! g`"zv',
 })
 
+-- On entering a buffer restore last view
+autocmd("BufWinEnter", {
+  pattern = { "*.md" },
+  command = 'silent! loadview',
+})
+
+-- On leaving create the view
+autocmd("BufWinLeave", {
+  pattern = { "*.md" },
+  command = 'mkview',
+})
+
 -- Remove whitespace before saving file
 autocmd({ "BufWritePre" }, {
   pattern = { "*" },
@@ -16,4 +28,10 @@ autocmd({ "BufWritePre" }, {
 autocmd("Filetype", {
   pattern = { "ocaml", "dune" },
   command = [[ setlocal makeprg=dune\ build\ @all ]]
+})
+
+-- Invoke cargo on 'rust' filetypes
+autocmd("Filetype", {
+  pattern = { "rust", "toml" },
+  command = [[ setlocal makeprg=cargo\ build ]]
 })

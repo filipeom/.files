@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'EdenEast/nightfox.nvim' -- Packer
-  use 'rose-pine/neovim'
   use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
   use 'nvim-treesitter/playground'
   use 'mbbill/undotree'
@@ -47,5 +46,4 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'wasp-platform/ecmasl-vim'
   use 'lervag/vimtex'
-  use '/home/filipe/projects/zettelkasten'
 end)
