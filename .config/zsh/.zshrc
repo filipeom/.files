@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+# Cargo
+export PATH=$HOME/.local/share/cargo/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$XDG_DATA_HOME/oh-my-zsh"
@@ -88,3 +90,7 @@ source "$ZDOTDIR/functions.zsh"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/filipe/.local/share/opam/opam-init/init.zsh' ]] || source '/home/filipe/.local/share/opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+#
+
+# NVM
+source /usr/share/nvm/init-nvm.sh

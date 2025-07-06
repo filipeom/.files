@@ -21,3 +21,6 @@ export OPAMROOT="$XDG_DATA_HOME/opam"
 
 # Cargo
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+# X
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
