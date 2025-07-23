@@ -36,6 +36,19 @@ lsp.setup_servers(
   , 'pyright'
   , 'texlab'
   , 'lua_ls'
-  , 'rust_analyzer'
 })
 lsp.setup()
+
+--  Configure rust-analyzer
+require('lspconfig').rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      check = {
+        extraArgs = {
+          "--target-dir",
+          "target/rust-analyzer"
+        }
+      }
+    }
+  }
+}
