@@ -19,3 +19,16 @@ require 'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  callback = function()
+    if (require "nvim-treesitter.parsers".has_parser()) then
+      -- with treesitter parser
+      vim.opt.foldmethod = "expr"
+      vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    else
+      -- without treesitter parser
+      vim.opt.foldmethod = "syntax"
+    end
+  end
+})
