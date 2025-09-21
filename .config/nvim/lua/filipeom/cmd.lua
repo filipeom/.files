@@ -1,15 +1,15 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 -- On entering a buffer go to last known cursor position
-autocmd("BufWinEnter", {
-  pattern = { "*" },
-  command = 'silent! normal! g`"zv',
-})
+-- autocmd("BufWinEnter", {
+--   pattern = { "*" },
+--   command = 'silent! normal! g`"',
+-- })
 
 -- On entering a buffer restore last view
 autocmd("BufWinEnter", {
   pattern = { "*.md" },
-  command = 'silent! loadview',
+  command = 'loadview',
 })
 
 -- On leaving create the view
